@@ -1,4 +1,7 @@
 # COP3503-Programming-fundamentals-2
+Description
+--------------
+The second course of a two-semester introductory sequence for students planning further study in computer science, digital arts and sciences or computer engineering. Concepts of computer science and the process of computer programming, including object-oriented programming, procedural and data abstraction and program modularity
 
 Lab
 ---------------
