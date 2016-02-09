@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE recipe PUBLIC "-//Happy-Monkey//DTD RecipeBook//EN"
+"http://www.happy-monkey.net/recipebook/recipebook.dtd">
+<recipe>
+  <title>Foofoo</title>
+
+  <ingredientlist>
+    <ingredient>
+      <quantity>2</quantity> 
+      <fooditem>ripe plantains</fooditem>
+    </ingredient>
+
+    <ingredient>
+      <fooditem>water</fooditem>
+    </ingredient>
+
+    <ingredient>
+      <quantity>1/4</quantity> 
+      <unit>cup</unit> 
+      <fooditem>chicherone</fooditem>
+    </ingredient>
+  </ingredientlist>
+
+  <preparation>
+    <step>
+	Slit peel of plantains lengthwise.
+    </step>
+    <step>
+	Cut plantains into 1 inch pieces, peels on.
+    </step>
+    <step>
+	Boil plantain chunks in enough water to cover in a
+	<equipment>2 qt. pot</equipment>, uncovered, for 10 minutes.
+    </step>
+    <step>
+	Drain plantains and allow to cool until you can handle them.
+    </step>
+    <step>
+	Remove peels (should be easy) and put peeled plantain chunks back
+	into pot.
+    </step>
+    <step>
+	Mash plantains with <equipment>potato masher</equipment>.
+    </step>
+    <step>
+	Add chicherone or bacon if desired, stir in.
+    </step>
+  </preparation>
+
+</recipe>

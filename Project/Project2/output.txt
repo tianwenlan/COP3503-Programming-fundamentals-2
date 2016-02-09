@@ -1,0 +1,4 @@
+foo 3
+bar 45
+banana 18
+grape 14

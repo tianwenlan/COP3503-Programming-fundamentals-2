@@ -1,0 +1,260 @@
+[f1]
+banana
+apple
+pineapple
+grapefruit
+orange
+pear
+grape
+lime
+lemon
+
+[f2]
+banana
+mango
+guanabana
+lychee
+avocado
+lime
+nispero
+guava
+carambola
+
+Script started on Tue 27 May 2014 09:12:30 PM EDT
+fac2:1% ./proj1
+======================================================================
+The numbered commands are as follows:
+0. exit
+1. input file <filename>: open and read a list from a file to the current list
+2. union file <filename>: open and union a set from a file with the current set
+3. subtract file <filename>: open and subtract set from a file from the current set
+4. difference file <filename>: open and find the difference between a set from a file and the current set
+5. intersect file <filename>: open and find the intersection between a set from a file and the current set
+6. reset current set to the empty set
+7. output file <filename>: open and write the current set to a file
+8. print current set to the console
+9. find <item name>: test if <item name> is in the current set
+10. insert <item name>: add <item name> to the current set if it is not already in it
+11. delete <item name>: remove <item name> from the current set if it is in it
+12. verbose output
+13. normal output
+14. silent output
+15. help
+======================================================================
+
+> 8
+> 1 f1
+New set loaded
+> 8
+banana
+apple
+pineapple
+grapefruit
+orange
+pear
+grape
+lime
+lemon
+> 9 banana
+Item banana found
+> 9 lemon
+Item lemon found
+> 9 kiwi
+Item kiwi not found
+> 10 kiwi
+Item kiwi inserted
+> 8
+banana
+apple
+pineapple
+grapefruit
+orange
+pear
+grape
+lime
+lemon
+kiwi
+> 11 apple
+Item apple deleted
+> 8
+banana
+pineapple
+grapefruit
+orange
+pear
+grape
+lime
+lemon
+kiwi
+> 9 apple
+Item apple not found
+> 9 kiwi
+Item kiwi found
+> 14
+8
+banana
+pineapple
+grapefruit
+orange
+pear
+grape
+lime
+lemon
+kiwi
+12
+0 - exit; 1 - input <file>; 2 - union <file>; 3 - subtract <file>;
+4 - difference <file>; 5 - intersect <file>; 6 - reset current set;
+7 - write <file>; 8 - print; 9 - find <item>; 10 - insert <item>;
+11 - delete <item>; 12 - verbose; 13 - normal; 14 - silent; 15 - help
+> 2 f2
+Union completed
+0 - exit; 1 - input <file>; 2 - union <file>; 3 - subtract <file>;
+4 - difference <file>; 5 - intersect <file>; 6 - reset current set;
+7 - write <file>; 8 - print; 9 - find <item>; 10 - insert <item>;
+11 - delete <item>; 12 - verbose; 13 - normal; 14 - silent; 15 - help
+> 13
+> 8
+banana
+pineapple
+grapefruit
+orange
+pear
+grape
+lime
+lemon
+kiwi
+mango
+guanabana
+lychee
+avocado
+nispero
+guava
+carambola
+> 6
+Reset completed
+> 8
+> 1 f2
+New set loaded
+> 8
+banana
+mango
+guanabana
+lychee
+avocado
+lime
+nispero
+guava
+carambola
+> 3 f1
+Subtraction completed
+> 8
+mango
+guanabana
+lychee
+avocado
+nispero
+guava
+carambola
+> 6
+Reset completed
+> 1 f1
+New set loaded
+> 4 f2
+Difference completed
+> 8
+apple
+pineapple
+grapefruit
+orange
+pear
+grape
+lemon
+mango
+guanabana
+lychee
+avocado
+nispero
+guava
+carambola
+> 6
+Reset completed
+> 1 f1
+New set loaded
+> 8
+banana
+apple
+pineapple
+grapefruit
+orange
+pear
+grape
+lime
+lemon
+> 5 f2
+Intersection completed
+> 8
+banana
+lime
+> 7 intersection
+Save to intersection completed
+> 6
+Reset completed
+> 1 f1
+New set loaded
+> 2 f2
+Union completed
+> 8
+banana
+apple
+pineapple
+grapefruit
+orange
+pear
+grape
+lime
+lemon
+mango
+guanabana
+lychee
+avocado
+nispero
+guava
+carambola
+> 3 intersetion    
+Subtraction completed
+> 8
+apple
+pineapple
+grapefruit
+orange
+pear
+grape
+lemon
+mango
+guanabana
+lychee
+avocado
+nispero
+guava
+carambola
+> 1 abc
+Unable to open file: abc
+> 8
+apple
+pineapple
+grapefruit
+orange
+pear
+grape
+lemon
+mango
+guanabana
+lychee
+avocado
+nispero
+guava
+carambola
+> 0
+fac2:2% ^Dexit
+
+Script done on Tue 27 May 2014 09:18:09 PM EDT

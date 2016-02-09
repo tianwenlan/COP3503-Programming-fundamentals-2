@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE recipe PUBLIC "-//Happy-Monkey//DTD RecipeBook//EN"
+"http://www.happy-monkey.net/recipebook/recipebook.dtd">
+<recipe>
+  <title>Arroz con Pollo</title>
+
+  <ingredientlist>
+    <ingredient>
+      <quantity>2</quantity> 
+      <unit>lbs</unit> 
+      <fooditem>chicken</fooditem>
+    </ingredient>
+
+    <ingredient>
+      <quantity>1</quantity> 
+      <unit>cup</unit> 
+      <fooditem>mojo griollo</fooditem>
+    </ingredient>
+
+    <ingredient>
+      <quantity>2</quantity> 
+      <fooditem>green pepper</fooditem>
+    </ingredient>
+
+    <ingredient>
+      <quantity>2</quantity> 
+      <fooditem>onion</fooditem>
+    </ingredient>
+
+    <ingredient>
+      <quantity>12</quantity> 
+      <unit>cloves</unit> 
+      <fooditem>garlic</fooditem>
+    </ingredient>
+
+    <ingredient>
+      <quantity>10</quantity> 
+      <unit>Tbsp</unit> 
+      <fooditem>olive oil</fooditem>
+    </ingredient>
+
+    <ingredient>
+      <quantity>6</quantity> 
+      <fooditem>bay leaf</fooditem>
+    </ingredient>
+
+    <ingredient>
+      <fooditem>salt</fooditem>
+    </ingredient>
+
+    <ingredient>
+      <quantity>5</quantity> 
+      <unit>Tbsp</unit> 
+      <fooditem>Saison completa</fooditem>
+    </ingredient>
+
+    <ingredient>
+      <quantity>1/2</quantity> 
+      <unit>tsp</unit> 
+      <fooditem>bijol</fooditem>
+    </ingredient>
+
+    <ingredient>
+      <quantity>2</quantity> 
+      <unit>Tbsp</unit> 
+      <fooditem>ground cumin</fooditem>
+    </ingredient>
+
+    <ingredient>
+      <quantity>1</quantity> 
+      <unit>cup</unit> 
+      <fooditem>manzanilla olives</fooditem>
+    </ingredient>
+
+    <ingredient>
+      <quantity>3</quantity> 
+      <unit>cups</unit> 
+      <fooditem>rice</fooditem>
+    </ingredient>
+
+    <ingredient>
+      <quantity>5</quantity> 
+      <unit>cups</unit> 
+      <fooditem>water</fooditem>
+    </ingredient>
+  </ingredientlist>
+
+  <preparation>
+    <step>
+	Cut up chicken and sprinkle lightly with salt and half of saison 
+	completa. Place in bowl or sealable plastic bag and marinate in 
+	mojo griollo for at least 1 hour.
+    </step>
+    <step>
+	Peel and chop onion, garlic.
+    </step>
+    <step>
+	Saute onion and garlic in 6 Tbsp. olive oil over medium heat in 
+	<equipment>large frying pan</equipment>.
+    </step>
+    <step>
+	Wash, de-seed, and chop green pepper. Add to saute mix to make sofrito.
+    </step>
+    <step>
+	Cook sofrito about 5 minutes, stirring on and off until onions are 
+	clear and garlic starts to turn golden. Do not overcook garlic. 
+	Set aside (can be made ahead of time).
+    </step>
+    <step>
+	In <equipment>large covered pot</equipment> brown chicken over medium
+	heat in batches - reserve marinade.
+    </step>
+    <step>
+	When all chicken has been browned, add sofrito, reserved marinade, and
+	all other ingredients (including rest of saison completa and salt to 
+	taste), stir, and bring to boil.
+    </step>
+    <step>
+	Reduce heat to simmer, cover, and cook 45 min., stirring occaissionally 
+	to prevent bottom from scorching. 
+    </step>
+  </preparation>
+
+</recipe>

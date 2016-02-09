@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE recipe PUBLIC "-//Happy-Monkey//DTD RecipeBook//EN"
+"http://www.happy-monkey.net/recipebook/recipebook.dtd">
+<recipe>
+  <title>Black Beans</title>
+
+  <ingredientlist>
+    <ingredient>
+      <quantity>2</quantity> 
+      <unit>cans</unit> 
+      <fooditem>black beans</fooditem>
+    </ingredient>
+
+    <ingredient>
+      <quantity>1</quantity> 
+      <fooditem>green pepper</fooditem>
+    </ingredient>
+
+    <ingredient>
+      <quantity>1</quantity> 
+      <fooditem>onion</fooditem>
+    </ingredient>
+
+    <ingredient>
+      <quantity>6</quantity> 
+      <unit>cloves</unit> 
+      <fooditem>garlic</fooditem>
+    </ingredient>
+
+    <ingredient>
+      <quantity>4</quantity> 
+      <unit>Tbsp</unit> 
+      <fooditem>olive oil</fooditem>
+    </ingredient>
+
+    <ingredient>
+      <quantity>4</quantity> 
+      <fooditem>bay leaf</fooditem>
+    </ingredient>
+
+    <ingredient>
+      <fooditem>salt</fooditem>
+    </ingredient>
+
+    <ingredient>
+      <quantity>1</quantity> 
+      <unit>Tbsp</unit> 
+      <fooditem>tomato paste</fooditem>
+    </ingredient>
+
+    <ingredient>
+      <quantity>1</quantity> 
+      <unit>Tbsp</unit> 
+      <fooditem>Saison completa</fooditem>
+    </ingredient>
+
+    <ingredient>
+      <quantity>1</quantity> 
+      <unit>tsp</unit> 
+      <fooditem>ground cumin</fooditem>
+    </ingredient>
+  </ingredientlist>
+
+  <preparation>
+    <step>
+	Peel and chop onion, garlic.
+    </step>
+    <step>
+	Saute onion and garlic in olive oil over medium heat in 
+	<equipment>2 qt. pot</equipment>.
+    </step>
+    <step>
+	Wash, de-seed, and chop green pepper. Add to saute mix to make sofrito.
+    </step>
+    <step>
+	Cook sofrito about 5 minutes, stirring on and off until onions are 
+	clear and garlic starts to turn golden. Do not overcook garlic.
+    </step>
+    <step>
+	Open cans and add beans to sofrito, along with rest of ingredients.
+	Stir well and heat for at least 15 more minutes.
+    </step>
+  </preparation>
+
+</recipe>

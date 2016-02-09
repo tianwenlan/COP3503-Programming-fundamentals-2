@@ -1,0 +1,20 @@
+CXX = g++
+CXXFLAGS = -c -Wall
+LDFLAGS =
+
+all: proj2
+
+proj2: COP3503su14_Proj2_WenlanT_main.o	COP3503su14_Proj2_WenlanT_multiSet.o COP3503su14_Proj2_WenlanT_object.o 
+	$(CXX) $(LDFLAGS) -o proj2 COP3503su14_Proj2_WenlanT_main.o COP3503su14_Proj2_WenlanT_multiSet.o COP3503su14_Proj2_WenlanT_object.o
+
+COP3503su14_Proj2_WenlanT_main.o: COP3503su14_Proj2_WenlanT_main.cpp COP3503su14_Proj2_WenlanT_main.h
+	$(CXX) $(CXXFLAGS) COP3503su14_Proj2_WenlanT_main.cpp
+
+COP3503su14_Proj2_WenlanT_multiSet.o: COP3503su14_Proj2_WenlanT_multiSet.cpp COP3503su14_Proj2_WenlanT_multiSet.h 
+	$(CXX) $(CXXFLAGS) COP3503su14_Proj2_WenlanT_multiSet.cpp
+
+COP3503su14_Proj2_WenlanT_object.o: COP3503su14_Proj2_WenlanT_object.cpp COP3503su14_Proj2_WenlanT_object.h
+	$(CXX) $(CXXFLAGS) COP3503su14_Proj2_WenlanT_object.cpp
+
+clean:
+	rm -rf *.o proj2

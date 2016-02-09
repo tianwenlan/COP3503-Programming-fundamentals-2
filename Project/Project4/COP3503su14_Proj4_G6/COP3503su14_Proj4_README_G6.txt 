@@ -1,0 +1,24 @@
+Project4-Revised and augmented sets, multisets 
+
+version 1.0 08/05/2014  
+
+README file
+
+
+TO COMPILE:
+make -f makefile1   //set
+make -f makefile2   //multiset
+make -f makefile3   //class hierarchy testing
+
+GENERAL USAGE NOTES:
+No special resources needed.
+No configuration needed.
+
+KNOW BUGS:
+1. After a certain type is selected, if the input item type is different from the selected type, the program cannot recognize this error.
+
+
+CONTACT:
+Phone: 000–000-0000
+E-mail: csturco0331@yahoo.com
+	wenlan@cise.ufl.edu

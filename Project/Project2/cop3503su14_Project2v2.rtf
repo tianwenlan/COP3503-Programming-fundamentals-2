@@ -1,0 +1,314 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1265\cocoasubrtf190
+{\fonttbl\f0\fswiss\fcharset0 ArialMT;\f1\fnil\fcharset0 Calibri;\f2\froman\fcharset0 TimesNewRomanPSMT;
+}
+{\colortbl;\red255\green255\blue255;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat0\levelspace360\levelindent0{\*\levelmarker \{decimal\}.}{\leveltext\leveltemplateid1\'02\'00.;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listname ;}\listid1}
+{\list\listtemplateid2\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}.}{\leveltext\leveltemplateid101\'02\'00.;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listname ;}\listid2}
+{\list\listtemplateid3\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}.}{\leveltext\leveltemplateid201\'02\'00.;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listname ;}\listid3}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}{\listoverride\listid2\listoverridecount0\ls2}{\listoverride\listid3\listoverridecount0\ls3}}
+{\info
+{\author Richard Newman}}\margl1440\margr1440\vieww21700\viewh11840\viewkind0
+\deftab720
+\pard\tx3220\tx21700\pardeftab720\sl276\slmult1
+
+\f0\b\fs28 \cf0 COP 3503 Project 2\'96 Multi-Set Operations Using Classes
+\f1\b0 \
+\pard\pardeftab720\sl276\slmult1
+
+\f0 \cf0 6/8/14
+\f1 \
+
+\f0 v2 updated 6/13/14
+\f1 \
+\pard\pardeftab720\sl276\slmult1
+
+\f0\b \cf0 DUE: Tuesday 6/17/14
+\f1\b0 \
+\pard\pardeftab720\sl276\slmult1
+
+\f0 \cf0 \
+\pard\pardeftab720\sl276\slmult1
+
+\b \cf0 Description
+\f1\b0 \
+\pard\pardeftab720\sl276\slmult1
+
+\f0 \cf0 You will modify your design for basic set operations to handle multisets, then document, implement, and test it. The program will maintain a current multiset and a current verbose state. This time, you are required to implement the multiset and its operations using classes. 
+\f1 \
+
+\f0 \
+\pard\pardeftab720\sl276\slmult1
+
+\b \cf0 Submission Requirements
+\f1\b0 \
+\pard\pardeftab720\sl276\slmult1
+
+\f0 \cf0 You must develop your source code in three types of files: one or more header file (.h), one or more class implementation file (.cpp), and one application file with the main() function (.cpp). You will also submit a makefile for that has \'93proj2\'94 as a target, for which the command \'93make proj2\'94 will properly compile and link your project 2 code and produce an executable named proj2 that behaves as described below. 
+\b Your code must compile and run on the CISE host thunder
+\b0  (see announcements for information on remote access to verify that your code does work there). 
+\f1 \
+
+\f0 As usual, you will also submit a README.txt file, a user documentation file (man page), and a project report that gives a higher level view of your code and that includes description of the testing you did. 
+\f1 \
+
+\f0 \
+\pard\pardeftab720\sl276\slmult1
+
+\b \cf0 User Input
+\f1\b0 \
+\pard\pardeftab720\sl276\slmult1
+
+\f0 \cf0 The user input is the same as for Project 1, but there are some differences regarding the meanings of the commands. 
+\f1 \
+
+\f0 The numbered commands are as follows:
+\f1 \
+\pard\pardeftab720\li720\fi-360\ri0\sl276\slmult1
+\ls1\ilvl0
+\f2 \cf0  0.	
+\f0 exit
+\f1 \
+\ls1\ilvl0
+\f2  1.	
+\f0 input file <filename>: open and read a list from a file to the current multiset
+\f1 \
+\ls1\ilvl0
+\f2  2.	
+\f0 union file <filename>: open and union a multiset from a file with the current multiset
+\f1 \
+\ls1\ilvl0
+\f2  3.	
+\f0 subtract file <filename>: open and subtract multiset from a file from the current multiset
+\f1 \
+\ls1\ilvl0
+\f2  4.	
+\f0 difference file <filename>: open and find the difference between a multiset from a file and the current multiset
+\f1 \
+\ls1\ilvl0
+\f2  5.	
+\f0 intersect file <filename>: open and find the intersection between a multiset from a file and the current multiset
+\f1 \
+\ls1\ilvl0
+\f2  6.	
+\f0 reset current multiset to the empty multiset
+\f1 \
+\ls1\ilvl0
+\f2  7.	
+\f0 output file <filename>: open and write the current multiset to a file 
+\f1 \
+\ls1\ilvl0
+\f2  8.	
+\f0 print current multiset to the console
+\f1 \
+\ls1\ilvl0
+\f2  9.	
+\f0 find <item name>: test if <item name> is in the current multiset
+\f1 \
+\ls1\ilvl0
+\f2  10.	
+\f0 insert <item name> <count>: add <item name> to the current multiset with number <count> if <item name> is not in the current multiset, or increase <item name>'s number by <count> if it is
+\f1 \
+\ls1\ilvl0
+\f2  11.	
+\f0 delete <item name>: remove <item name> from the current multiset if it is in it
+\f1 \
+\ls1\ilvl0
+\f2  12.	
+\f0 reduce <item name> <count>: reduce the number of <item name> by <count>
+\f1 \
+\ls1\ilvl0
+\f2  13.	
+\f0 verbose output
+\f1 \
+\ls1\ilvl0
+\f2  14.	
+\f0 normal output
+\f1 \
+\ls1\ilvl0
+\f2  15.	
+\f0 silent output
+\f1 \
+\ls1\ilvl0
+\f2  16.	
+\f0 help
+\f1 \
+\ls1\ilvl0
+\f2  17.	
+\f0 (optional:) max <filename>: open and find the maximum between a multiset from a file and the current multiset. 
+\f1 \
+\pard\pardeftab720\sl276\slmult1
+
+\f0\b \cf0 File input and output format
+\f1\b0 \
+\pard\pardeftab720\sl276\slmult1
+
+\f0 \cf0 Files and output to the console of a list will be in the form of one text string \'93item\'94 followed by one integer number per line. The string may not have spaces or other white space in it. The number indicates how many of that named item there are in the multiset. It is legal for the same name to appear twice or more in an input file. If this occurs, then the number appearing for the new entry is simply added to the number for the existing entry in the multiset.  
+\f1 \
+
+\f0 \
+\pard\pardeftab720\sl276\slmult1
+
+\b \cf0 Functionality
+\f1\b0 \
+\pard\pardeftab720\sl276\slmult1
+
+\f0 \cf0 The process will maintain a current multiset, and another multiset that is being read from a file as needed. Each multiset may be of any size. You may use vectors to implement multisets. 
+\f1 \
+
+\f0 Writes to the console prompting for command; item and number; file; or writes indicating command completion are specified for normal mode. In silent mode, none of these are issued. In verbose mode, you may add extra information, such as the number of items in the new current set, the number of items added and/or removed, etc. 
+\f1 \
+
+\f0 Writes indicating errors (e.g., failure to open a file), will be written to standard error (cerr stream). 
+\f1 \
+
+\f0 \
+\pard\pardeftab720\sl276\slmult1
+
+\b \cf0 Program Command Line Arguments
+\f1\b0 \
+\pard\pardeftab720\sl276\slmult1
+
+\f0 \cf0 The program will read in optional command line parameters for verbosity state (default is normal, -v indicates verbose, and -s indicates silent mode) as well as file input for the initial multiset (using -f <file_name> to indicate the file to read in).
+\f1 \
+
+\f0  
+\f1 \
+\pard\pardeftab720\sl276\slmult1
+
+\f0\b \cf0 User Interface Commands
+\b0  
+\f1 \
+\pard\pardeftab720\li720\fi-360\ri0\sl276\slmult1
+\ls2\ilvl0
+\f2 \cf0  1.	
+\f0 The 
+\b input
+\b0  operation will empty the current multiset and fill it with the multiset read from the specified file, and write \'93New multiset loaded\'94 to the console. 
+\f1 \
+\ls2\ilvl0
+\f2  2.	
+\f0\b Union
+\b0  will read in the multiset from the file; if item \'93X\'94 with number n is read from the file, and item \'93X\'94 is not in the current multiset, then \'93X\'94 will be added to the current multiset with the count n; otherwise if item \'93X\'94 has current count m, its count is updated to m+n. When the union operation is done, the system will print \'93<file> union completed\'94 to the console. 
+\f1 \
+\ls2\ilvl0
+\f2  3.	
+\f0\b Subtract
+\b0  will read in the multiset from the file; if item \'93X\'94  with number n is read from the file, and item \'93X\'94 with count m > n is in the current multiset, then \'93X\'94 will be remain with count m-n; if n >= m, then \'93X\'94 is removed from the current multiset; otherwise nothing happens. When the subtract operation is done, the program will print \'93<file> subtraction completed\'94 to the console. 
+\f1 \
+\ls2\ilvl0
+\f2  4.	
+\f0\b Difference
+\b0  will read in the multiset from the file (note that multiple appearances of the same item must be handled upon reading the file in). If item \'93X\'94 with number n is read from the file, and item \'93X\'94 is not in the current multiset, then \'93X\'94 will be added to the new current multiset with number n; likewise, if \'93Y\'94 is in the current multiset with number m and \'93Y\'94 is not in the multiset read from the file, then \'93Y\'94 with number m will be added to the new current multiset. If \'93X\'94 with number n is read in, and \'93X\'94 with number m is in the current multiset, then the new current multiset will have \'93X\'94 with the number |m \'96 n| unless m = n, in which case \'93X\'94 is not in the new current multiset. When it is done, the program will print \'93<file> difference completed\'94 to the console. 
+\f1 \
+\ls2\ilvl0
+\f2  5.	
+\f0\b Intersect
+\b0  will read in the multiset from the file; if item \'93X\'94 with number n is read from the file, and item \'93X\'94 with number m is  in the current multiset, then \'93X\'94 with the number min(m, n) will be added to the current multiset, otherwise \'93X\'94 is not in the new current multiset. When it is done, the program will print \'93<file> intersection completed\'94 to the console. 
+\f1 \
+\ls2\ilvl0
+\f2  6.	
+\f0\b Reset
+\b0  will remove all items from the current multiset and will print \'93Reset completed\'94 to the console. 
+\f1 \
+\ls2\ilvl0
+\f2  7.	
+\f0\b Output
+\b0  will save the current multiset into a file in the same format as a multiset read from a file. When it is done, it will print \'93Save to <file> completed\'94 to the console. 
+\f1 \
+\ls2\ilvl0
+\f2  8.	
+\f0\b Print
+\b0  will perform this operation to the console, but will print \'93Current multiset:\'94 followed by a newline, then the items, rather than the completion statement. 
+\f1 \
+\ls2\ilvl0
+\f2  9.	
+\f0\b Find
+\b0  <item> will search the current multiset and print \'93Item <item> found with count <count>\'94 if <item> is in the current multiset with number <count>; otherwise it will print \'93Item <item> not found\'94. 
+\f1 \
+\ls2\ilvl0
+\f2  10.	
+\f0\b Insert
+\b0  <item> <count> will add <item> to the current multiset with number <count> if it is not already in the current multiset, and will change the number to m + <count> if <item> is already in the multiset with number m. The program will print \'93Item <item> inserted with count <m'>\'94 where m' is the final value of the number. 
+\f1 \
+\ls2\ilvl0
+\f2  11.	
+\f0\b Delete
+\b0  <item>  will remove <item> from the current multiset if it is present, and will print \'93Item <item> deleted\'94, or will print \'93Item <item> not in multiset\'94 otherwise. 
+\f1 \
+\ls2\ilvl0
+\f2  12.	
+\f0\b Reduce
+\b0  <item> <count> will reduce the number m associated with <item> by <count>, or will remove <item> if the resulting number m - <count> is less than or equal to zero. The program will print \'93Item <item> count reduced to <m \'96 count>\'94 if the new number is greater than zero, or will print \'93Item <item> removed\'94 if the new number is less than or equal to zero, or will print \'93Item <item> not in multiset\'94 otherwise. Note that reduce with a negative number is allowed, and results in increasing the number associated with the item. 
+\f1 \
+\ls2\ilvl0
+\f2  13.	
+\f0\b Verbose
+\b0  will cause the current state of output prompt to remain verbose until changed. The default state is normal. In verbose state, the user prompt shall include a short list of all commands (i.e., the numbers and a one-word description along with parameter if any). In verbose state, additional information as you see appropriate (and at least some additional information for each of the commands that change the state of the current multiset) shall be printed to the console. 
+\f1 \
+\ls2\ilvl0
+\f2  14.	
+\f0\b Normal
+\b0  will cause the current verbosity state to remain normal until changed. In normal state, the user prompt shall be \'93> \'93 on a new line without a newline at the end. This prompt will also be printed in verbose state. In both cases, the feedback indicated for each command above will be printed to the console. 
+\f1 \
+\ls2\ilvl0
+\f2  15.	
+\f0\b Silent
+\b0  will cause the current verbosity state to remain in silent mode until changed. In silent mode, there is no prompt and there is no output to the console. Remember that error messages are printed to standard error.
+\f1 \
+\ls2\ilvl0
+\f2  16.	
+\f0\b Help
+\b0  prints a more complete description of the commands and their meanings, followed by the regular \'93> \'93 prompt (once), regardless of the current verbosity mode. 
+\f1 \
+\ls2\ilvl0
+\f2  17.	
+\f0\b Max
+\b0  is similar to union, but with an important difference: the numbers are not added, but rather the larger of the two is used as the result. Max will read in the multiset from the file; if item \'93X\'94 with number n is read from the file, and item \'93X\'94 is not in the current multiset, then \'93X\'94 will be added to the current multiset with the count n; otherwise if item \'93X\'94 has current count m, its count is updated to the maximum of m and n. When the max operation is done, the system will print \'93Max completed\'94 to the console. 
+\f1 \
+\ls2\ilvl0
+\f2  18.	
+\f0 In all cases, the output line will be followed by a newline.
+\f1 \
+\pard\pardeftab720\sl276\slmult1
+
+\f0 \cf0  
+\f1 \
+\pard\pardeftab720\sl276\slmult1
+
+\f0\b \cf0 Errors
+\f1\b0 \
+\pard\pardeftab720\sl276\slmult1
+
+\f0 \cf0 Your program must detect and handle in a reasonable way typical errors. All warnings are printed to standard error (cerr). These include but are not limited to:
+\f1 \
+\pard\pardeftab720\li720\fi-360\ri0\sl276\slmult1
+\ls3\ilvl0
+\f2 \cf0  1.	
+\f0 File <filename> does not exist or exists but cannot be opened in the desired mode \'96 print warning to standard error.
+\f1 \
+\ls3\ilvl0
+\f2  2.	
+\f0 File is not in correct format \'96 print warning to standard error. Items that are not in correct format must be discarded, with additional warning to the console in verbose mode. 
+\f1 \
+\ls3\ilvl0
+\f2  3.	
+\f0 Item <item name> <count> is not in correct format on user input line \'96 issue warning to standard error and print help on correct format to the console.
+\f1 \
+\ls3\ilvl0
+\f2  4.	
+\f0 Command is invalid \'96 issue warning to standard error and print verbose prompt to console.
+\f1 \
+\pard\pardeftab720\sl276\slmult1
+
+\f0 \cf0 \
+\pard\pardeftab720\sl276\slmult1
+
+\b \cf0 Examples
+\f1\b0 \
+\pard\pardeftab720\sl276\slmult1
+
+\f0 \cf0 Refer to the file proj2_example.txt for example behavior. 
+\f1 \
+
+\f0 \
+}

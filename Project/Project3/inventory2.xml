@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE recipe PUBLIC "-//Happy-Monkey//DTD RecipeBook//EN"
+"http://www.happy-monkey.net/recipebook/recipebook.dtd">
+<inventory>
+	<ingredientlist>
+
+	  <ingredient>
+		  <quantity>8</quantity> 
+		  <units>oz.</units> 
+		  <fooditem>dry blackeyed peas</fooditem>
+	  </ingredient>
+
+	  <ingredient>
+		  <quantity>1</quantity> <units>tsp.</units> <fooditem>baking
+			  powder</fooditem>
+	  </ingredient>
+
+	  <ingredient>
+		  <quantity>1</quantity> <units>tsp.</units> <fooditem>unrefined
+			  sugar</fooditem>
+	  </ingredient>
+
+	  <ingredient>
+		  <quantity>-2</quantity>
+		  <units>ribs</units>
+		  <fooditem>celery</fooditem>
+		  , chopped
+	  </ingredient>
+
+
+	  <ingredient>
+		  <quantity>1</quantity> 
+		  <units>large</units>
+		  <fooditem>green pepper</fooditem>
+		  ,chopped
+	  </ingredient>
+
+	<ingredient>
+		<quantity>3</quantity> 
+		<units>large</units>
+	<fooditem>plum (roma) tomatoes</fooditem>
+	, chopped
+	</ingredient>
+
+	<ingredient>
+		<fooditem>eggs</fooditem>
+	</ingredient>
+
+	<ingredient>
+		<quantity>2</quantity> 
+		<units>tsp.</units> 
+		<fooditem>garlic</fooditem>
+	</ingredient>
+
+</ingredientlist>
+
+<equipmentlist>
+
+	  <equipment>pot</equipment>
+	  <equipment>knif</equipment> 
+	  <equipment>microwave</equipment>
+
+</equipmentlist>
+
+
+</inventory>

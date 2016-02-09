@@ -1,0 +1,3 @@
+fish 7
+mother 1
+bicycle 2

@@ -1,0 +1,494 @@
+all registers saved by frames farther in) or else to debugger
+"convenience" variables (any such name not a known register).
+Use assignment expressions to give values to convenience variables.
+
+{TYPE}ADREXP refers to a datum of data type TYPE, located at address ADREXP.
+@ is a binary operator for treating consecutive data objects
+anywhere in memory as an array.  FOO@NUM gives an array whose first
+element is FOO, whose second element is stored in the space following
+where FOO is stored, etc.  FOO must be an expression whose value
+resides in memory.
+
+EXP may be preceded with /FMT, where FMT is a format letter
+but no count or size letter (see "x" command).
+(gdb) help info
+Generic command for showing things about the program being debugged.
+
+List of info subcommands:
+
+info address -- Describe where symbol SYM is stored
+info all-registers -- List of all registers and their contents
+info args -- Argument variables of current stack frame
+info auto-load-scripts -- Print the list of automatically loaded scripts
+info auxv -- Display the inferior's auxiliary vector
+info bookmarks -- Status of user-settable bookmarks
+info breakpoints -- Status of specified breakpoints (all user-settable breakpoints if no argument)
+info catch -- Exceptions that can be caught in the current stack frame
+info checkpoints -- IDs of currently known checkpoints
+info classes -- All Objective-C classes
+info common -- Print out the values contained in a Fortran COMMON block
+info copying -- Conditions for redistributing copies of GDB
+info dcache -- Print information on the dcache performance
+info display -- Expressions to display when program stops
+info extensions -- All filename extensions associated with a source language
+info files -- Names of targets and files being debugged
+---Type <return> to continue, or q <return> to quit---q
+Quit
+(gdb) info frame
+Stack level 1, frame at 0x7fffffffe680:
+ rip = 0x400c24 in main (broken.cpp:44); saved rip 0x2300000001
+ caller of frame at 0x7fffffffe610
+ source language c++.
+ Arglist at 0x7fffffffe670, args: 
+ Locals at 0x7fffffffe670, Previous frame's sp is 0x7fffffffe680
+ Saved registers:
+  rbx at 0x7fffffffe668, rbp at 0x7fffffffe670, rip at 0x7fffffffe678
+(gdb) print array_size
+$3 = 20
+(gdb) select-frame 0
+(gdb) print i
+$4 = 632
+(gdb) set variable i =0
+(gdb) print i
+$5 = 0
+(gdb) print test[0]
+$6 = 34
+(gdb) print test[1]
+$7 = 12
+(gdb) print *test
+$8 = 34
+(gdb) run
+The program being debugged has been started already.
+Start it from the beginning? (y or n) y
+`/cise/homes/wenlan/lab06/debugfun' has changed; re-reading symbols.
+
+Starting program: /cise/homes/wenlan/lab06/debugfun 
+warning: no loadable sections found in added symbol-file system-supplied DSO at 0x7ffff7ffa000
+Sum of random numbers is: 410
+
+Program received signal SIGFPE, Arithmetic exception.
+0x0000000000400c86 in main () at broken.cpp:51
+51	        cout << i << "/fact(" << i << ") is " << (i/factorial(i)) << endl;
+(gdb) call factorial(3)
+$9 = 0
+(gdb) call factorial(6)
+$10 = 0
+(gdb) break factorial
+Breakpoint 1 at 0x400acb: file broken.cpp, line 10.
+(gdb) run
+The program being debugged has been started already.
+Start it from the beginning? (y or n) y
+
+Starting program: /cise/homes/wenlan/lab06/debugfun 
+warning: no loadable sections found in added symbol-file system-supplied DSO at 0x7ffff7ffa000
+Sum of random numbers is: 524
+
+Breakpoint 1, factorial (n=1) at broken.cpp:10
+10	    int fact = 0;
+(gdb) list
+5	#include "strstuff.h"
+6	using namespace std;
+7	
+8	//This function computes the factorial of a number
+9	int factorial(int n){
+10	    int fact = 0;
+11	    while(n >= 0){
+12	        fact *= n;
+13	        --n;
+14	    }
+(gdb) s
+11	    while(n >= 0){
+(gdb) print fact
+$11 = 0
+(gdb) print n
+$12 = 1
+(gdb) print fact
+$13 = 0
+(gdb) s
+12	        fact *= n;
+(gdb) s
+13	        --n;
+(gdb) s
+11	    while(n >= 0){
+(gdb) s
+12	        fact *= n;
+(gdb) s
+13	        --n;
+(gdb) s
+11	    while(n >= 0){
+(gdb) set variable fact =1
+(gdb) print fact
+$14 = 1
+(gdb) finish
+Run till exit from #0  factorial (n=-1) at broken.cpp:11
+0x0000000000400c7b in main () at broken.cpp:51
+51	for(int i=1;i<10;i++)
+Value returned is $15 = 1
+(gdb) s
+1/fact(1) is 1
+50	eful factorial stuff.
+(gdb) continue
+Continuing.
+
+Breakpoint 1, factorial (n=2) at broken.cpp:10
+10	 //   int fact = 0;
+(gdb) continue
+Continuing.
+
+Program received signal SIGFPE, Arithmetic exception.
+0x0000000000400c86 in main () at broken.cpp:51
+51	for(int i=1;i<10;i++)
+(gdb) r
+The program being debugged has been started already.
+Start it from the beginning? (y or n) y
+`/cise/homes/wenlan/lab06/debugfun' has changed; re-reading symbols.
+
+    Starting program: /cise/homes/wenlan/lab06/debugfun 
+warning: no loadable sections found in added symbol-file system-supplied DSO at 0x7ffff7ffa000
+Sum of random numbers is: 436
+
+Breakpoint 1, factorial (n=1) at broken.cpp:11
+11	      int fact = 0;
+(gdb) info breakpoint
+Num     Type           Disp Enb Address            What
+1       breakpoint     keep y   0x0000000000400acb in factorial(int) 
+                                                   at broken.cpp:11
+	breakpoint already hit 1 time
+(gdb) disable 1
+(gdb) continue
+Continuing.
+
+Program received signal SIGFPE, Arithmetic exception.
+0x0000000000400c86 in main () at broken.cpp:52
+52	        cout << i << "/fact(" << i << ") is " << (i/factorial(i)) << endl;
+(gdb) call factorial(3)
+$16 = 0
+(gdb) run
+The program being debugged has been started already.
+Start it from the beginning? (y or n) y
+
+Starting program: /cise/homes/wenlan/lab06/debugfun 
+warning: no loadable sections found in added symbol-file system-supplied DSO at 0x7ffff7ffa000
+Sum of random numbers is: 318
+
+Program received signal SIGFPE, Arithmetic exception.
+0x0000000000400c86 in main () at broken.cpp:52
+52	int i=1;i<10;i++)
+(gdb) break broken.cpp:54
+Breakpoint 2 at 0x400cec: broken.cpp:54. (3 locations)
+(gdb) break broken.cpp:54
+Note: breakpoint 2 also set at pc 0x400cec.
+Note: breakpoint 2 also set at pc 0x400d01.
+Note: breakpoint 2 also set at pc 0x400d37.
+Breakpoint 3 at 0x400cec: broken.cpp:54. (3 locations)
+(gdb) run
+The program being debugged has been started already.
+Start it from the beginning? (y or n) y
+`/cise/homes/wenlan/lab06/debugfun' has changed; re-reading symbols.
+
+    Starting program: /cise/homes/wenlan/lab06/debugfun 
+warning: no loadable sections found in added symbol-file system-supplied DSO at 0x7ffff7ffa000
+Sum of random numbers is: 578
+
+Breakpoint 2, main () at broken.cpp:54
+54	        cout << i << "/fact(" << i << ") is " << (i/factorial(i)) << endl;
+(gdb) call 3/6
+$17 = 0
+(gdb) call 3.0/6
+$18 = 0.5
+(gdb) continut
+Undefined command: "continut".  Try "help".
+(gdb) continue
+Continuing.
+1/fact(1) is inf
+
+Breakpoint 2, main () at broken.cpp:54
+54	        cout << i << "/fact(" << i << ") is " << (i/factorial(i)) << endl;
+(gdb) info breakpoint
+Num     Type           Disp Enb Address            What
+1       breakpoint     keep n   0x0000000000400b1b in factorial(int) 
+                                                   at broken.cpp:12
+2       breakpoint     keep y   0x0000000000400cc2 in main() at broken.cpp:54
+	breakpoint already hit 2 times
+3       breakpoint     keep y   0x0000000000400cc2 in main() at broken.cpp:54
+	breakpoint already hit 2 times
+(gdb) disable 3
+(gdb) break Str::echo
+Breakpoint 4 at 0x400eba: file strstuff.cpp, line 24.
+(gdb) continue
+Continuing.
+2/fact(2) is inf
+
+Breakpoint 2, main () at broken.cpp:54
+54	        cout << i << "/fact(" << i << ") is " << (i/factorial(i)) << endl;
+(gdb) info breakpoint
+Num     Type           Disp Enb Address            What
+1       breakpoint     keep n   0x0000000000400b1b in factorial(int) 
+                                                   at broken.cpp:12
+2       breakpoint     keep y   0x0000000000400cc2 in main() at broken.cpp:54
+	breakpoint already hit 3 times
+3       breakpoint     keep n   0x0000000000400cc2 in main() at broken.cpp:54
+	breakpoint already hit 2 times
+4       breakpoint     keep y   0x0000000000400eba in Str::echo() 
+                                                   at strstuff.cpp:24
+(gdb) disable break 2
+(gdb) info breakpoint
+Num     Type           Disp Enb Address            What
+1       breakpoint     keep n   0x0000000000400b1b in factorial(int) 
+                                                   at broken.cpp:12
+2       breakpoint     keep n   0x0000000000400cc2 in main() at broken.cpp:54
+	breakpoint already hit 3 times
+3       breakpoint     keep n   0x0000000000400cc2 in main() at broken.cpp:54
+	breakpoint already hit 2 times
+4       breakpoint     keep y   0x0000000000400eba in Str::echo() 
+                                                   at strstuff.cpp:24
+(gdb) wacth c
+Undefined command: "wacth".  Try "help".
+(gdb) watch c
+Hardware watchpoint 5: c
+(gdb) continue
+Continuing.
+3/fact(3) is inf
+4/fact(4) is inf
+5/fact(5) is inf
+6/fact(6) is inf
+7/fact(7) is inf
+8/fact(8) is inf
+9/fact(9) is inf
+[Inferior 1 (process 31811) exited normally]
+(gdb) run
+`/cise/homes/wenlan/lab06/debugfun' has changed; re-reading symbols.
+Error in re-setting breakpoint 5: No symbol "c" in current context.
+Starting program: /cise/homes/wenlan/lab06/debugfun 
+Error in re-setting breakpoint 5: No symbol "c" in current context.
+Error in re-setting breakpoint 5: No symbol "c" in current context.
+warning: no loadable sections found in added symbol-file system-supplied DSO at 0x7ffff7ffa000
+Error in re-setting breakpoint 5: No symbol "c" in current context.
+Sum of random numbers is: 382
+1/fact(1) is inf
+2/fact(2) is inf
+3/fact(3) is inf
+4/fact(4) is inf
+5/fact(5) is inf
+6/fact(6) is inf
+7/fact(7) is inf
+8/fact(8) is inf
+9/fact(9) is inf
+
+Breakpoint 4, Str::echo (this=0x603060) at strstuff.cpp:24
+24	    char c = '~';
+(gdb) info watchpoints
+Num     Type           Disp Enb Address            What
+5       hw watchpoint  keep y                      c
+(gdb) continue
+Continuing.
+he magic words are squeamish ossifrage
+The string is 40 characters long
+Deconstructed
+[Inferior 1 (process 31960) exited normally]
+(gdb) info watchpoint
+Num     Type           Disp Enb Address            What
+5       hw watchpoint  keep y                      c
+(gdb) disable 5
+(gdb) c
+The program is not being run.
+(gdb) info watchpoint
+Num     Type           Disp Enb Address            What
+5       hw watchpoint  keep n                      c
+(gdb) c
+The program is not being run.
+(gdb) run
+Starting program: /cise/homes/wenlan/lab06/debugfun 
+Error in re-setting breakpoint 5: No symbol "c" in current context.
+Error in re-setting breakpoint 5: No symbol "c" in current context.
+warning: no loadable sections found in added symbol-file system-supplied DSO at 0x7ffff7ffa000
+Error in re-setting breakpoint 5: No symbol "c" in current context.
+Sum of random numbers is: 515
+1/fact(1) is inf
+2/fact(2) is inf
+3/fact(3) is inf
+4/fact(4) is inf
+5/fact(5) is inf
+6/fact(6) is inf
+7/fact(7) is inf
+8/fact(8) is inf
+9/fact(9) is inf
+
+Breakpoint 4, Str::echo (this=0x603060) at strstuff.cpp:24
+24	    char c = '~';
+(gdb) s
+25	    int i=0;
+(gdb) print i
+$19 = -134225208
+(gdb) s
+26	    while(buf[i++] != '\0') {
+(gdb) print i
+$20 = 0
+(gdb) s
+28	c=buf[i];
+(gdb) print i
+$21 = 1
+(gdb) print buf[1]
+$22 = 104 'h'
+(gdb) run
+The program being debugged has been started already.
+Start it from the beginning? (y or n) y
+`/cise/homes/wenlan/lab06/debugfun' has changed; re-reading symbols.
+Error in re-setting breakpoint 5: No symbol "c" in current context.
+
+Starting program: /cise/homes/wenlan/lab06/debugfun 
+Error in re-setting breakpoint 5: No symbol "c" in current context.
+Error in re-setting breakpoint 5: No symbol "c" in current context.
+warning: no loadable sections found in added symbol-file system-supplied DSO at 0x7ffff7ffa000
+Error in re-setting breakpoint 5: No symbol "c" in current context.
+Sum of random numbers is: 579
+1/fact(1) is inf
+2/fact(2) is inf
+3/fact(3) is inf
+4/fact(4) is inf
+5/fact(5) is inf
+6/fact(6) is inf
+7/fact(7) is inf
+8/fact(8) is inf
+9/fact(9) is inf
+
+Breakpoint 4, Str::echo (this=0x603060) at strstuff.cpp:24
+24	    char c = '~';
+(gdb) finish
+Run till exit from #0  Str::echo (this=0x603060) at strstuff.cpp:24
+The magic words are squeamish ossifrage
+main () at broken.cpp:61
+61	    cout << "The string is " << str->length() << " characters long" << endl;
+(gdb) s
+Str::length (this=0x603060) at strstuff.cpp:38
+38	    int i=0;
+(gdb) finish
+Run till exit from #0  Str::length (this=0x603060) at strstuff.cpp:38
+0x000000000040108b in main () at broken.cpp:61
+61	    cout << "The string is " << str->length() << " characters long" << endl;
+Value returned is $23 = 40
+(gdb) info locals
+test_array = {87, 81, 47, 64, 13, 76, 60, 76, 48, 27}
+array_size = 10
+sum = 579
+str = 0x603060
+(gdb) print str->buf
+$24 = 0x603080 "The magic words are squeamish ossifrage"
+(gdb) call strlen(buf)
+
+Program received signal SIGSEGV, Segmentation fault.
+__strlen_sse42 () at ../sysdeps/x86_64/multiarch/strlen-sse4.S:32
+32	../sysdeps/x86_64/multiarch/strlen-sse4.S: No such file or directory.
+The program being debugged was signaled while in a function called from GDB.
+GDB remains in the frame where the signal was received.
+To change this behavior use "set unwindonsignal on".
+Evaluation of the expression containing the function
+(__strlen_sse42) will be abandoned.
+When the function is done executing, GDB will silently stop.
+(gdb) print buf
+$25 = 0x0
+(gdb) print hhh
+No symbol "hhh" in current context.
+(gdb) call strlen(str->buf)
+No symbol "str" in current context.
+(gdb) info frame
+Stack level 0, frame at 0x7fffffffe580:
+ rip = 0x7ffff763a99f in __strlen_sse42
+    (../sysdeps/x86_64/multiarch/strlen-sse4.S:32); saved rip 0x400d00
+ called by frame at 0x7fffffffe588
+ source language asm.
+ Arglist at 0x7fffffffe570, args: 
+ Locals at 0x7fffffffe570, Previous frame's sp is 0x7fffffffe580
+ Saved registers:
+  rip at 0x7fffffffe578
+(gdb) finish
+Run till exit from #0  __strlen_sse42 ()
+    at ../sysdeps/x86_64/multiarch/strlen-sse4.S:32
+
+Program terminated with signal SIGSEGV, Segmentation fault.
+The program no longer exists.
+(gdb) r
+Starting program: /cise/homes/wenlan/lab06/debugfun 
+Error in re-setting breakpoint 5: No symbol "c" in current context.
+Error in re-setting breakpoint 5: No symbol "c" in current context.
+warning: no loadable sections found in added symbol-file system-supplied DSO at 0x7ffff7ffa000
+Error in re-setting breakpoint 5: No symbol "c" in current context.
+Sum of random numbers is: 532
+1/fact(1) is inf
+2/fact(2) is inf
+3/fact(3) is inf
+4/fact(4) is inf
+5/fact(5) is inf
+6/fact(6) is inf
+7/fact(7) is inf
+8/fact(8) is inf
+9/fact(9) is inf
+
+Breakpoint 4, Str::echo (this=0x603060) at strstuff.cpp:24
+24	    char c = '~';
+(gdb) call strlen(str->buf)
+No symbol "str" in current context.
+(gdb) finish
+Run till exit from #0  Str::echo (this=0x603060) at strstuff.cpp:24
+The magic words are squeamish ossifrage
+main () at broken.cpp:61
+61	    cout << "The string is " << str->length() << " characters long" << endl;
+(gdb) call strlen(str->buf)
+$26 = 39
+(gdb) call str->length
+$27 = {int (Str * const)} 0x4012f0 <Str::length()>
+(gdb) run
+The program being debugged has been started already.
+Start it from the beginning? (y or n) y
+`/cise/homes/wenlan/lab06/debugfun' has changed; re-reading symbols.
+Error in re-setting breakpoint 5: No symbol "c" in current context.
+
+Starting program: /cise/homes/wenlan/lab06/debugfun 
+Error in re-setting breakpoint 5: No symbol "c" in current context.
+Error in re-setting breakpoint 5: No symbol "c" in current context.
+warning: no loadable sections found in added symbol-file system-supplied DSO at 0x7ffff7ffa000
+Error in re-setting breakpoint 5: No symbol "c" in current context.
+Sum of random numbers is: 459
+1/fact(1) is inf
+2/fact(2) is inf
+3/fact(3) is inf
+4/fact(4) is inf
+5/fact(5) is inf
+6/fact(6) is inf
+7/fact(7) is inf
+8/fact(8) is inf
+9/fact(9) is inf
+
+Breakpoint 4, Str::echo (this=0x603060) at strstuff.cpp:24
+24	    char c = '~';
+(gdb) continue
+Continuing.
+The magic words are squeamish ossifrage
+The string is 39 characters long
+Deconstructed
+[Inferior 1 (process 32052) exited normally]
+(gdb) deconstruct
+Undefined command: "deconstruct".  Try "help".
+(gdb) help
+List of classes of commands:
+
+aliases -- Aliases of other commands
+breakpoints -- Making program stop at certain points
+data -- Examining data
+files -- Specifying and examining files
+internals -- Maintenance commands
+obscure -- Obscure features
+running -- Running the program
+stack -- Examining the stack
+status -- Status inquiries
+support -- Support facilities
+tracepoints -- Tracing of program execution without stopping the program
+user-defined -- User-defined commands
+
+Type "help" followed by a class name for a list of commands in that class.
+Type "help all" for the list of all commands.
+Type "help" followed by command name for full documentation.
+Type "apropos word" to search for commands related to "word".
+Command name abbreviations are allowed if unambiguous.
+(gdb) 
+

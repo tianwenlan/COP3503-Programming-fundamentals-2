@@ -1,0 +1,12 @@
+all: Proj4_MultiSet
+
+Proj4_MultiSet: testP4main2.o
+	g++ -o Proj4_MultiSet testP4main2.o
+
+testP4main2.o: testP4main2.cpp Proj4.h
+	g++ -c testP4main2.cpp
+
+
+clean:
+	rm -rf *.o
+	rm Proj4_MultiSet

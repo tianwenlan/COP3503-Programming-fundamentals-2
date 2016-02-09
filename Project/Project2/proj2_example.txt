@@ -1,0 +1,237 @@
+Script started on Thu 12 Jun 2014 05:08:03 PM EDT
+fac1:1% cat a
+foo 5
+bar 4
+baz 2
+boz 1
+fac1:2% cat b
+foo 4
+bar 4
+baz 4
+buz 4
+fac1:3% ./proj2c -h
+======================================================================
+Usage: proj2 [-s][-v][-h][-f <filename>]
+	-s: silent mode
+	-v: verbose mode
+	-h: print this help
+	-f <filename>: read <filename> into the current set
+======================================================================
+The numbered commands are as follows:
+0. exit
+1. input file <filename>: open and read a list from a file to the current list
+2. union file <filename>: open and union a multiset from a file with the current multiset
+3. subtract file <filename>: open and subtract multiset from a file from the current multiset
+4. difference file <filename>: open and find the difference between a multiset from a file and the current multiset
+5. intersect file <filename>: open and find the intersection between a multiset from a file and the current multiset
+6. reset current multiset to the empty multiset
+7. output file <filename>: open and write the current multiset to a file
+8. print current multiset to the console
+9. find <item name>: test if <item name> is in the current multiset
+10. insert <item name>: add <item name> to the current multiset if it is not already in it
+11. delete <item name>: remove <item name> from the current multiset if it is in it
+12. reduce <item name> <count>: reduce the number of <item name> in the current multiset by <count> if it is in it
+13. verbose output
+14. normal output
+15. silent output
+16. help
+======================================================================
+
+> 1 a
+New set loaded
+> 8
+Current set:
+foo 5
+bar 4
+baz 2
+boz 1
+> 2 a
+a union completed
+> 8
+Current set:
+foo 10
+bar 8
+baz 4
+boz 2
+> 3 b
+b subtraction completed
+> 8
+Current set:
+foo 6
+bar 4
+boz 2
+> 5 b
+b intersection completed
+> 8
+Current set:
+foo 4
+bar 4
+> 0
+fac1:4% ./proj2c -s
+1 a
+2 b
+3 d
+Unable to open file: d
+13
+0 - exit; 1 - input <file>; 2 - union <file>; 3 - subtract <file>;
+4 - difference <file>; 5 - intersect <file>; 6 - reset current set;
+7 - write <file>; 8 - print; 9 - find <item>; 10 - insert <item> <count>;
+11 - delete <item>; 12 - reduce <item> <count> ;13 - verbose; 14 - normal; 15 - silent; 16 - help
+> 8
+Current set:
+foo 9
+bar 8
+baz 6
+boz 1
+buz 4
+0 - exit; 1 - input <file>; 2 - union <file>; 3 - subtract <file>;
+4 - difference <file>; 5 - intersect <file>; 6 - reset current set;
+7 - write <file>; 8 - print; 9 - find <item>; 10 - insert <item> <count>;
+11 - delete <item>; 12 - reduce <item> <count> ;13 - verbose; 14 - normal; 15 - silent; 16 - help
+> 2 a
+a union completed
+0 - exit; 1 - input <file>; 2 - union <file>; 3 - subtract <file>;
+4 - difference <file>; 5 - intersect <file>; 6 - reset current set;
+7 - write <file>; 8 - print; 9 - find <item>; 10 - insert <item> <count>;
+11 - delete <item>; 12 - reduce <item> <count> ;13 - verbose; 14 - normal; 15 - silent; 16 - help
+> 1 a
+New set loaded from a
+0 - exit; 1 - input <file>; 2 - union <file>; 3 - subtract <file>;
+4 - difference <file>; 5 - intersect <file>; 6 - reset current set;
+7 - write <file>; 8 - print; 9 - find <item>; 10 - insert <item> <count>;
+11 - delete <item>; 12 - reduce <item> <count> ;13 - verbose; 14 - normal; 15 - silent; 16 - help
+> 14
+> 8
+Current set:
+foo 5
+bar 4
+baz 2
+boz 1
+> 3 b
+b subtraction completed
+> 8
+Current set:
+foo 1
+boz 1
+> 4 b
+b difference completed
+> 8
+Current set:
+foo 3
+boz 1
+bar 4
+baz 4
+buz 4
+> 1 a
+New set loaded
+> 8
+Current set:
+foo 5
+bar 4
+baz 2
+boz 1
+> 3 4 b
+b difference completed
+> 8
+Current set:
+foo 1
+buz 4
+baz 2
+boz 1
+> 1 b
+New set loaded
+> 8
+Current set:
+foo 4
+bar 4
+baz 4
+buz 4
+> 9 foo
+Item foo found with count 4
+> 10 foo 3
+Item foo inserted with count 3
+> 9 10 bar -2
+Item bar inserted with count -2
+> 9 ba ooz
+Item booz not in set
+> 8
+Current set:
+foo 7
+bar 2
+baz 4
+buz 4
+> 11 buz
+Item buz deleted
+> 12 foo 5
+Item foo count reduced to 2
+> 12 bar 5
+Item bar removed
+> 8
+Current set:
+foo 2
+baz 4
+> 12 bazs  4
+Item baz removed
+> 16
+======================================================================
+Usage: proj2 [-s][-v][-h][-f <filename>]
+	-s: silent mode
+	-v: verbose mode
+	-h: print this help
+	-f <filename>: read <filename> into the current set
+======================================================================
+The numbered commands are as follows:
+0. exit
+1. input file <filename>: open and read a list from a file to the current list
+2. union file <filename>: open and union a multiset from a file with the current multiset
+3. subtract file <filename>: open and subtract multiset from a file from the current multiset
+4. difference file <filename>: open and find the difference between a multiset from a file and the current multiset
+5. intersect file <filename>: open and find the intersection between a multiset from a file and the current multiset
+6. reset current multiset to the empty multiset
+7. output file <filename>: open and write the current multiset to a file
+8. print current multiset to the console
+9. find <item name>: test if <item name> is in the current multiset
+10. insert <item name>: add <item name> to the current multiset if it is not already in it
+11. delete <item name>: remove <item name> from the current multiset if it is in it
+12. reduce <item name> <count>: reduce the number of <item name> in the current multiset by <count> if it is in it
+13. verbose output
+14. normal output
+15. silent output
+16. help
+======================================================================
+
+> 0
+fac1:5% ./proj2c -v -f a
+New set loaded from a
+0 - exit; 1 - input <file>; 2 - union <file>; 3 - subtract <file>;
+4 - difference <file>; 5 - intersect <file>; 6 - reset current set;
+7 - write <file>; 8 - print; 9 - find <item>; 10 - insert <item> <count>;
+11 - delete <item>; 12 - reduce <item> <count> ;13 - verbose; 14 - normal; 15 - silent; 16 - help
+> 8
+Current set:
+foo 5
+bar 4
+baz 2
+boz 1
+0 - exit; 1 - input <file>; 2 - union <file>; 3 - subtract <file>;
+4 - difference <file>; 5 - intersect <file>; 6 - reset current set;
+7 - write <file>; 8 - print; 9 - find <item>; 10 - insert <item> <count>;
+11 - delete <item>; 12 - reduce <item> <count> ;13 - verbose; 14 - normal; 15 - silent; 16 - help
+> 14
+> 6
+Reset completed
+> 1 a
+New set loaded
+> 17 b
+Max completed
+> 8
+Current set:
+foo 5
+bar 4
+baz 4
+boz 1
+buz 4
+> 0
+fac1:6% ^Dexit
+
+Script done on Thu 12 Jun 2014 05:14:57 PM EDT

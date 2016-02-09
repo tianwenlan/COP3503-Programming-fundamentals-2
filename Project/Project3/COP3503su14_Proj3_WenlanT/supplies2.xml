@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE inventory PUBLIC "-//Happy-Monkey//DTD RecipeBook//EN"
+"http://www.happy-monkey.net/recipebook/recipebook.dtd">
+ 
+<inventory>
+  <ingredientlist>
+    <ingredient>
+      <quantity>24</quantity> 
+      <unit>Tsp</unit> 
+      <fooditem>Ground Cumin</fooditem>
+    </ingredient>
+
+    <ingredient>
+      <quantity>6</quantity> 
+      <unit>packet</unit> 
+      <fooditem>Bijol</fooditem>
+    </ingredient>
+
+    <ingredient>
+      <quantity>6</quantity> 
+      <unit>packet</unit> 
+      <fooditem>Bijol</fooditem>
+    </ingredient>
+
+    <ingredient>
+      <quantity>5</quantity> 
+      <unit>C.</unit> 
+      <fooditem>unbleached wheat blend flour</fooditem>
+    </ingredient>
+
+    <ingredient>
+      <quantity>5</quantity> 
+      <unit>lb.</unit> 
+      <fooditem>rice</fooditem>
+    </ingredient>
+
+    <ingredient>
+      <quantity>2</quantity> 
+      <unit>lb.</unit> 
+      <fooditem>unrefined sugar</fooditem>
+    </ingredient>
+
+    <ingredient>
+      <quantity>3</quantity> 
+      <unit>qt.</unit> 
+      <fooditem>olive oil</fooditem>
+    </ingredient>
+
+    <ingredient>
+      <quantity>18</quantity> 
+      <fooditem>egg</fooditem>
+    </ingredient>
+  </ingredientlist>
+
+</inventory>
+
+
+  

@@ -1,0 +1,210 @@
+
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                 TEST 1
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------
+Testing insert:
+-------------
+  Inserting 6, 4, 5, 2, 8, 10, 
+  Insert completed
+-------------
+Testing sum/size/average:
+-------------
+  sum : good
+  size: good
+  avg : Expected: 5.83333
+        Received: 5.83333
+-------------
+Testing remove:
+-------------
+  Removing 10
+  Expected: 2 4 5 6 8 
+  Received: 2 4 5 6 8 
+
+  Removing 4
+  Expected: 2 5 6 8 
+  Received: 2 5 6 8 
+
+  Removing 5
+  Expected: 2 6 8 
+  Received: 2 6 8 
+
+  Removing 6
+  Expected: 2 8 
+  Received: 2 8 
+-------------
+Testing clear:
+-------------
+  Received: Tree empty
+
+
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                 TEST 2
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------
+Testing insert:
+-------------
+  Inserting 5, 
+  Insert completed
+-------------
+Testing sum/size/average:
+-------------
+  sum : good
+  size: good
+  avg : Expected: 5
+        Received: 5
+-------------
+Testing remove:
+-------------
+  Removing 5
+  Expected: 
+  Received: Tree empty
+
+  Removing 5
+  Expected: 
+  Received: Tree empty
+
+  Removing 5
+  Expected: 
+  Received: Tree empty
+
+  Removing 5
+  Expected: 
+  Received: Tree empty
+-------------
+Testing clear:
+-------------
+  Received: Tree empty
+
+
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                 TEST 3
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------
+Testing insert:
+-------------
+  Inserting 8, 4, 2, 6, 12, 10, 14, 
+  Insert completed
+-------------
+Testing sum/size/average:
+-------------
+  sum : good
+  size: good
+  avg : Expected: 8
+        Received: 8
+-------------
+Testing remove:
+-------------
+  Removing 2
+  Expected: 4 6 8 10 12 14 
+  Received: 4 6 8 10 12 14 
+
+  Removing 12
+  Expected: 4 6 8 10 14 
+  Received: 4 6 8 10 14 
+
+  Removing 4
+  Expected: 6 8 10 14 
+  Received: 6 8 10 14 
+
+  Removing 8
+  Expected: 6 10 14 
+  Received: 6 10 14 
+-------------
+Testing clear:
+-------------
+  Received: Tree empty
+
+
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                 TEST 4
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------
+Testing insert:
+-------------
+  Inserting -2, 4, -6, 8, -10, 12, -14, 16, -18, 20, 
+  Insert completed
+-------------
+Testing sum/size/average:
+-------------
+  sum : good
+  size: good
+  avg : Expected: 1
+        Received: 1
+-------------
+Testing remove:
+-------------
+  Removing -2
+  Expected: -18 -14 -10 -6 4 8 12 16 20 
+  Received: -18 -14 -10 -6 4 8 12 16 20 
+
+  Removing -6
+  Expected: -18 -14 -10 4 8 12 16 20 
+  Received: -18 -14 -10 4 8 12 16 20 
+
+  Removing 4
+  Expected: -18 -14 -10 8 12 16 20 
+  Received: -18 -14 -10 8 12 16 20 
+
+  Removing 8
+  Expected: -18 -14 -10 12 16 20 
+  Received: -18 -14 -10 12 16 20 
+-------------
+Testing clear:
+-------------
+  Received: Tree empty
+
+
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                 TEST 5
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------
+Testing insert:
+-------------
+  Inserting 20, 18, 16, 14, 12, 10, 8, 6, 4, 2, 
+  Insert completed
+-------------
+Testing sum/size/average:
+-------------
+  sum : good
+  size: good
+  avg : Expected: 11
+        Received: 11
+-------------
+Testing remove:
+-------------
+  Removing 2
+  Expected: 4 6 8 10 12 14 16 18 20 
+  Received: 4 6 8 10 12 14 16 18 20 
+
+  Removing 10
+  Expected: 4 6 8 12 14 16 18 20 
+  Received: 4 6 8 12 14 16 18 20 
+
+  Removing 12
+  Expected: 4 6 8 14 16 18 20 
+  Received: 4 6 8 14 16 18 20 
+
+  Removing 20
+  Expected: 4 6 8 14 16 18 
+  Received: 4 6 8 14 16 18 
+-------------
+Testing clear:
+-------------
+  Received: Tree empty
+

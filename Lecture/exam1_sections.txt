@@ -1,0 +1,24 @@
+COP 3503
+Summer 2014
+
+Sections from the LLM book to cover for Exam 1
+Chapter 1 - All sections
+Chapter 2 - All sections except 2.4.3-4
+Chapter 3 - All sections
+Chapter 4 - All sections except 4.8
+Chapter 5 - All sections
+Chapter 6 - All sections except 6.4-6.7
+Chapter 7 - 7.1
+Chapter 8 - All sections
+
+You are also responsible for material covered in class lectures.
+
+You can expect to see questions related to what is and what is
+not legal in C++, what certain code fragments do, and how to 
+accomplish a particular task in C++. 
+
+In addition, there will be essay problems concerning programming
+language paradigms, implementation, and use, particulary but not
+exclusively as these relate to object orientation.
+
+

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE inventory PUBLIC "-//Happy-Monkey//DTD RecipeBook//EN"
+"http://www.happy-monkey.net/recipebook/recipebook.dtd">
+
+<inventory>
+  <ingredientlist>
+    <ingredient>
+      <quantity>8</quantity> 
+      <unit>C.</unit> 
+      <fooditem>unbleached wheat blend flour</fooditem>
+    </ingredient>
+
+    <ingredient>
+      <quantity>1</quantity> 
+      <unit>can</unit> 
+      <fooditem>baking powder</fooditem>
+    </ingredient>
+
+    <ingredient>
+      <quantity>5</quantity> 
+      <unit>lb.</unit> 
+      <fooditem>unrefined sugar</fooditem>
+    </ingredient>
+
+    <ingredient>
+      <quantity>1</quantity> 
+      <unit>box</unit> 
+      <fooditem>coarse kosher salt</fooditem>
+    </ingredient>
+
+    <ingredient>
+      <quantity>10</quantity> 
+      <fooditem>free-range egg</fooditem>
+    </ingredient>
+
+    <ingredient>
+      <quantity>1</quantity> 
+      <unit>gal.</unit>
+      <fooditem>hormone-free milk</fooditem>
+    </ingredient>
+
+    <ingredient>
+      <quantity>1</quantity> 
+      <unit>jar</unit>
+      <fooditem>natural peanut butter</fooditem>
+    </ingredient>
+
+    <ingredient>
+      <quantity>1</quantity> 
+      <unit>bottle</unit>
+      <fooditem>ketchup</fooditem>
+    </ingredient>
+
+    <ingredient>
+      <quantity>1/2</quantity> 
+      <unit>gal.</unit>
+      <fooditem>orange juice</fooditem>
+    </ingredient>
+
+    <ingredient>
+      <quantity>1</quantity> 
+      <unit>box</unit>
+      <fooditem>cheerios</fooditem>
+    </ingredient>
+
+    <ingredient>
+      <quantity>24</quantity> 
+      <unit>oz.</unit> 
+      <fooditem>organic vegetable oil</fooditem>
+    </ingredient>
+  </ingredientlist>
+
+  <equipmentlist>
+    <equipment>mixing bowl</equipment>
+    <equipment>mixer</equipment>
+    <equipment>blender</equipment>
+    <equipment>small frying pan</equipment>
+    <equipment>large frying pan</equipment>
+    <equipment>griddle</equipment>
+    <equipment>2 qt. pot</equipment>
+    <equipment>1 qt. pot</equipment>
+    <equipment>10 qt. pot</equipment>
+    <equipment>rice cooker</equipment>
+  </equipmentlist>
+</inventory>
+
+
+  

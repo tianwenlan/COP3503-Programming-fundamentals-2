@@ -1,0 +1,39 @@
+1. What happened? Which files were compiled? Why?
+The console prints:
+g++ -c -Wall graphmenu.cpp
+g++  -o graph graphmenu.o graph.o
+
+graphmenu.cpp, graphmenu.o, graph.o are compiled.
+
+The graphmenu.cpp is changed, so it is compiled, and generated the graphmenu.o file. As a consequence, the graphmenu.o and graph.o are complied. On the contrary, the graph.cpp did not change, so that it is not compiled.
+
+2. Again, what happened? Which files were compiled. And why?
+The console prints:
+g++ -c -Wall graph.cpp
+g++  -o graph graphmenu.o graph.o
+
+graph.cpp, graphmenu.o, graph.o are compiled.
+
+Same reason as above. The graph.cpp is changed, so it is compiled, and generated the graph.o file. As a consequence, the graphmenu.o and graph.o are complied. On the contrary, the graphmenu.cpp did not change, so that it is not compiled.
+
+3. What happened? Which files were compiled this time? Why is this different from the previous 2 examples? Did you edit graphmenu.cpp? Did it recompile? Why?
+The console prints:
+g++ -c -Wall graphmenu.cpp
+g++ -c -Wall graph.cpp
+g++  -o graph graphmenu.o graph.o
+
+The graphmenu.cpp, graph.cpp, graphmenu.o, graph.o are all compiled. But the ./graph has no difference because this function is not called. In order to do so, this function needs to be called in the main function.
+
+4. What was compiled this time?
+The num_vertices() is called and the number of vertices is printed out.
+
+5. What does this accomplish?
+The graphmenu.o, graph.o and graph files are removed.
+
+6. What was compiled this time?
+The console prints:
+g++ -c -Wall graphmenu.cpp
+g++ -c -Wall graph.cpp
+g++  -o graph graphmenu.o graph.o
+
+All the graphmenu.cpp, graph.cpp, graphmenu.o and graph.o are compiled.

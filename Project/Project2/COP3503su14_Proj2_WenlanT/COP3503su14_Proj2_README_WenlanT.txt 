@@ -1,0 +1,19 @@
+Project1-MultiSets version 1.0 06/17/2014  README file
+
+TO COMPILE:
+make -f COP3503su14_Proj2_WenlanT_makefile
+
+GENERAL USAGE NOTES:
+No special resources needed.
+No configuration needed.
+
+
+KNOW BUGS:
+The program cannot distinguish whether item name is a real name or a number. If the input is a number, the program will still run.
+
+User input: when there is more stuff on the command input, the program will use the first one or two to finish the current program. The remaining command input will be considered another command for another program.
+
+
+CONTACT:
+Phone: 000–000-0000
+E-mail: wenlan@cise.ufl.edu

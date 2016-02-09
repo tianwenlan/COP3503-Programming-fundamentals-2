@@ -1,0 +1,19 @@
+Project1-MultiSets version 1.0 07/17/2014  README file
+
+TO COMPILE:
+make -f makefile
+
+GENERAL USAGE NOTES:
+No special resources needed.
+No configuration needed.
+
+
+KNOW BUGS:
+1. When the ingredient without quantity in the original cookbook file, the quantity will be input as 1 rather than empty.
+2. When there is a section, and two recipes following the section, the program cannot read, and will exit.
+3. When there is no quantity or unit in the ingredient, the output XML file still have a tag like <quantity></quantity><unit></unit> rather than not shown.
+
+
+CONTACT:
+Phone: 000–000-0000
+E-mail: wenlan@cise.ufl.edu

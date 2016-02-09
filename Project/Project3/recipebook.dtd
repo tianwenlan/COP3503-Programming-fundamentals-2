@@ -1,0 +1,91 @@
+<!--
+
+RecipeXML - An XML recipe markup language.
+
+Copyright (C) 2005 David Horton
+This work is licensed under the Creative Commons Attribution Share-Alike
+license.  See http://creativecommons.org/licenses/by/2.0/ for details.
+
+Modified 2014 Richard Newman
+
+-->
+
+
+<!-- === REQUIRED Hyperlinks for URL references === -->
+
+<!ELEMENT hyperlink (#PCDATA)>
+<!ATTLIST hyperlink url CDATA #REQUIRED>
+
+
+<!-- === OPTIONAL  Information about a recipe === -->
+
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT blurb (#PCDATA)>
+<!ELEMENT effort (#PCDATA)>
+<!ELEMENT genre (#PCDATA)>
+<!ELEMENT preptime (#PCDATA)>
+<!ELEMENT source (#PCDATA|hyperlink)*>
+<!ELEMENT yield (#PCDATA)>
+
+
+<!-- === REQUIRED Lists of ingredients === -->
+
+<!ELEMENT fooditem (#PCDATA)>
+<!ELEMENT quantity (#PCDATA)>
+<!ELEMENT unit (#PCDATA)>
+<!-- FIXME? The mixed-content definition below does not enforce one and
+     only one instance of the tags quantity, unit and fooditem. -->
+<!ELEMENT ingredient (#PCDATA | quantity | unit | fooditem)*>
+
+
+<!-- === REQUIRED Elements of preparation === -->
+
+<!ELEMENT equipment (#PCDATA | hyperlink)*>
+<!ELEMENT step (#PCDATA | equipment | hyperlink)*>
+
+<!-- === OPTIONAL Elements of preparation === -->
+<!-- === MODIFIED Elements of preparation === -->
+
+<!ELEMENT equipmentinv (#PCDATA?, quantity?, equipment)>
+<!ELEMENT timeamt (#PCDATA)>
+<!ELEMENT timeunit (#PCDATA)>
+<!ELEMENT timetype (#PCDATA)>
+<!ELEMENT steptime (#PCDATA?, (timeamt, timeunit, timetype?)+)>
+<!ELEMENT timedstep (#PCDATA?, step, steptime?)>
+
+
+<!-- === REQUIRED The main elements of a recipe === -->
+<!-- === REQUIRED title, ingredientlist, and preparation  === -->
+<!-- === OPTIONAL recipeinfo, serving, notes  === -->
+
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT recipeinfo (author | blurb | effort | genre | preptime | source | yield)*>
+<!ELEMENT ingredientlist (ingredient)*>
+<!ELEMENT preparation (#PCDATA | equipment | step | timedstep | hyperlink)*>
+<!ELEMENT serving (#PCDATA | hyperlink)*>
+<!ELEMENT notes (#PCDATA | hyperlink)*>
+
+
+<!-- === REQUIRED And finally, the recipe itself === -->
+<!-- === OPTIONAL all items noted with "?" are optional === -->
+
+<!ELEMENT recipe (title, recipeinfo?, ingredientlist, preparation, serving?, notes?)>
+
+
+<!-- === The following elements provide logical groupings of recipes === -->
+
+
+<!-- ===  OPTIONAL A section provides logical divisions of a cookbook === -->
+
+<!ELEMENT section (title, recipe+)>
+
+
+<!-- ===  REQUIRED A cookbook consists of one or more recipes or sections === -->
+<!-- ===  MODIFIED so that title is optional  === -->
+<!ELEMENT cookbook (title?, (section | recipe)+)>
+
+<!-- ===  REQUIRED inventory === -->
+
+<!ELEMENT equipmentlist (equipment)*>
+
+<!ELEMENT inventory (ingredientlist | equipmentlist)+>

@@ -1,0 +1,4 @@
+foo 5
+bar 4
+baz 2
+boz 1

@@ -1,0 +1,19 @@
+Project1-Sets version 1.0 05/30/2014  README file
+
+COMPILE:
+g++ COP3503su14_Proj1_WenlanT.cpp -o COP3503su14_Proj1_WenlanT
+
+
+GENERAL USAGE NOTES:
+No special resources needed.
+No configuration needed.
+
+
+KNOW BUGS:
+The reset() does not work perfectly. If the subtract, difference, intersect run at the beginning, it can work correctly. However, if they were called after either of the other two, the function will not run wrong. Messages are output to the console every time insertItem(), deleteItem(), findItem() are called.
+Enter a command other than a number in the prompt will exit the program directly.
+
+
+CONTACT:
+Phone: 000–000-0000
+E-mail: wenlan@cise.ufl.edu

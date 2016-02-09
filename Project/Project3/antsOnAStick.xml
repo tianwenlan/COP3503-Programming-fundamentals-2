@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE recipe PUBLIC "-//Happy-Monkey//DTD RecipeBook//EN"
+"http://www.happy-monkey.net/recipebook/recipebook.dtd">
+<recipe>
+  <title>Ants on a Stick</title>
+
+  <ingredientlist>
+    <ingredient>
+      <quantity>6</quantity> 
+      <unit>stalks</unit> 
+      <fooditem>celery</fooditem>
+    </ingredient>
+
+    <ingredient>
+      <quantity>6</quantity> 
+      <unit>tbsp.</unit> 
+      <fooditem>peanut butter</fooditem>
+    </ingredient>
+
+    <ingredient>
+      <quantity>1/2</quantity> 
+      <unit>cup</unit> 
+      <fooditem>raisins</fooditem>
+    </ingredient>
+  </ingredientlist>
+
+  <preparation>
+    <step>
+	Wash, trim, and dry celery stalks.
+    </step>
+    <step>
+	Fill each celery stalk with peanut butter.
+    </step>
+    <step>
+	Arrange raisins in a line on peanut butter in celery stalks.
+    </step>
+  </preparation>
+
+</recipe>

@@ -1,0 +1,12 @@
+all: Proj4_Set
+
+Proj4_Set: testP4main1.o
+	g++ -o Proj4_Set testP4main1.o
+
+testP4main1.o: testP4main1.cpp Proj4.h
+	g++ -c testP4main1.cpp
+
+
+clean:
+	rm -rf *.o
+	rm Proj4_Set

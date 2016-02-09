@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE recipe PUBLIC "-//Happy-Monkey//DTD RecipeBook//EN"
+"http://www.happy-monkey.net/recipebook/recipebook.dtd">
+<cookbook>
+
+<recipe>
+  <title>Ropa Vieja</title>
+
+  <ingredientlist>
+    <ingredient>
+      <quantity>2</quantity> 
+      <unit>lbs</unit> 
+      <fooditem>London broil</fooditem>
+    </ingredient>
+
+    <ingredient>
+      <quantity>4</quantity> 
+      <unit>cups</unit> 
+      <fooditem>water</fooditem>
+    </ingredient>
+
+    <ingredient>
+      <quantity>2</quantity> 
+      <fooditem>green pepper</fooditem>
+    </ingredient>
+
+    <ingredient>
+      <quantity>2</quantity> 
+      <fooditem>onion</fooditem>
+    </ingredient>
+
+    <ingredient>
+      <quantity>12</quantity> 
+      <unit>cloves</unit> 
+      <fooditem>garlic</fooditem>
+    </ingredient>
+
+    <ingredient>
+      <quantity>6</quantity> 
+      <unit>Tbsp</unit> 
+      <fooditem>olive oil</fooditem>
+    </ingredient>
+
+    <ingredient>
+      <quantity>4</quantity> 
+      <fooditem>bay leaf</fooditem>
+    </ingredient>
+
+    <ingredient>
+      <fooditem>salt</fooditem>
+    </ingredient>
+
+    <ingredient>
+      <quantity>2</quantity> 
+      <unit>Tbsp</unit> 
+      <fooditem>Saison completa</fooditem>
+    </ingredient>
+
+    <ingredient>
+      <quantity>2</quantity> 
+      <unit>Tbsp</unit> 
+      <fooditem>tomato paste</fooditem>
+    </ingredient>
+
+    <ingredient>
+      <quantity>1</quantity> 
+      <unit>Tbsp</unit> 
+      <fooditem>ground cumin</fooditem>
+    </ingredient>
+
+    <ingredient>
+      <quantity>1</quantity> 
+      <unit>Tbsp</unit> 
+      <fooditem>garlic powder</fooditem>
+    </ingredient>
+
+    <ingredient>
+      <quantity>1/2</quantity> 
+      <unit>cup</unit> 
+      <fooditem>manzanilla olives</fooditem>
+    </ingredient>
+  </ingredientlist>
+
+  <preparation>
+    <step>
+	Peel and halve one onion. Wash, remove stem and seeds from one
+	green pepper and halve it.
+    </step>
+    <step>
+	Put onion, pepper, meat, and water in 
+	<equipment>pressure cooker</equipment>, seal and cook under
+	pressure for 45 minutes.
+    </step>
+    <step>
+	In the meanwhile, peel and chop other onion, garlic.
+    </step>
+    <step>
+	Saute onion and garlic in olive oil over medium heat in 
+	<equipment>large frying pan</equipment>.
+    </step>
+    <step>
+	Wash, de-seed, and chop other green pepper. 
+	Add to saute mix to make sofrito.
+    </step>
+    <step>
+	Cook sofrito about 5 minutes, stirring on and off until onions are 
+	clear and garlic starts to turn golden. Do not overcook garlic. 
+	Set aside (can be made ahead of time).
+    </step>
+    <step>
+	When meat has finished cooking, let pressure cooker cool until it
+	is safe to open lid. Drain meat reserving broth, and remove onion
+	and pepper. 
+    </step>
+    <step>
+	Shred meat into strands using two forks (whence the name, which 
+	means "old clothes").
+    </step>
+    <step>
+	Add the sofrito and spices, along with tomato paste and enough of
+	the reserved broth to make the mixture moist but not runny.
+    </step>
+    <step>
+	Cook on low for at least 10 minutes, stirring as needed.
+    </step>
+    <step>
+    </step>
+  </preparation>
+
+</recipe>
+
+	<recipe>
+		<title>Black Beans</title>
+		<ingredientlist>
+			<ingredient>
+				<quantity>2</quantity> 
+				<unit>cans</unit> 
+				<fooditem>black beans</fooditem>
+			</ingredient>
+			<ingredient>
+				<quantity>1</quantity> 
+				<fooditem>green pepper</fooditem>
+			</ingredient>
+			<ingredient>
+				<quantity>1</quantity> 
+				<fooditem>onion</fooditem>
+			</ingredient>
+			<ingredient>
+				<quantity>6</quantity> 
+				<unit>cloves</unit> 
+				<fooditem>garlic</fooditem>
+			</ingredient>
+			<ingredient>
+				<quantity>4</quantity> 
+				<unit>Tbsp</unit> 
+				<fooditem>olive oil</fooditem>
+			</ingredient>
+			<ingredient>
+				<quantity>4</quantity> 
+				<fooditem>bay leaf</fooditem>
+			</ingredient>
+			<ingredient>
+				<fooditem>salt</fooditem>
+			</ingredient>
+			<ingredient>
+				<quantity>1</quantity> 
+				<unit>Tbsp</unit> 
+				<fooditem>tomato paste</fooditem>
+			</ingredient>
+			<ingredient>
+				<quantity>1</quantity> 
+				<unit>Tbsp</unit> 
+				<fooditem>Saison completa</fooditem>
+			</ingredient>
+			<ingredient>
+				<quantity>1</quantity> 
+				<unit>tsp</unit> 
+				<fooditem>ground cumin</fooditem>
+			</ingredient>
+		</ingredientlist>
+		<preparation>
+			<step>
+			Peel and chop onion, garlic.
+			</step>
+			<step>
+			Saute onion and garlic in olive oil over medium heat in 
+			<equipment>2 qt. pot</equipment>.
+			</step>
+			<step>
+			Wash, de-seed, and chop green pepper. Add to saute mix to make sofrito.
+			</step>
+			<step>
+			Cook sofrito about 5 minutes, stirring on and off until onions are 
+			clear and garlic starts to turn golden. Do not overcook garlic.
+			</step>
+			<step>
+			Open cans and add beans to sofrito, along with rest of ingredients.
+			Stir well and heat for at least 15 more minutes.
+			</step>
+		</preparation>
+	</recipe>
+
+</cookbook>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE recipe PUBLIC "-//Happy-Monkey//DTD RecipeBook//EN"
+"http://www.happy-monkey.net/recipebook/recipebook.dtd">
+<recipe>
+  <title>Tostones</title>
+
+  <ingredientlist>
+    <ingredient>
+      <quantity>2</quantity> 
+      <fooditem>green plantains</fooditem>
+    </ingredient>
+
+    <ingredient>
+      <fooditem>oil for frying</fooditem>
+    </ingredient>
+
+    <ingredient>
+      <fooditem>salt</fooditem>
+    </ingredient>
+  </ingredientlist>
+
+  <preparation>
+	  <equipment>lsdf</equipment>
+    <step>
+	Cut peel off plantains and cut into 1/2 to 1 inch chunks.
+    </step>
+    <step>
+        Bring oil (at least 2 inches deep) to 280-300 degrees F.
+    </step>
+    <step>
+	Fry plantain chunks for about 2 minutes in batches of 6-7.
+    </step>
+    <step>
+	Drain fried plantain chunks and smash with 
+	<equipment>tostonera</equipment> to 1/4 inch thickness
+    </step>
+    <step>
+	Fry flattened plantain chunks for about 2 more minutes in batches of 3-4.
+    </step>
+    <step>
+	Drain and place tostones on paper towels.
+    </step>
+    <step>
+	Lightly salt tostones to taste.
+    </step>
+  </preparation>
+
+</recipe>

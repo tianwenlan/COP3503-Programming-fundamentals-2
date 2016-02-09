@@ -1,0 +1,615 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1265\cocoasubrtf190
+{\fonttbl\f0\fnil\fcharset0 Calibri;\f1\fswiss\fcharset0 ArialMT;\f2\froman\fcharset0 TimesNewRomanPSMT;
+}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue128;\red255\green39\blue18;\red254\green73\blue64;
+\red217\green11\blue0;\red191\green191\blue191;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat0\levelspace360\levelindent0{\*\levelmarker \{decimal\}.}{\leveltext\leveltemplateid1\'02\'00.;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listname ;}\listid1}
+{\list\listtemplateid2\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}.}{\leveltext\leveltemplateid101\'02\'00.;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listname ;}\listid2}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}{\listoverride\listid2\listoverridecount0\ls2}}
+{\info
+{\author Richard Newman}}\margl1440\margr1440\vieww16280\viewh11860\viewkind0
+\deftab720
+\pard\pardeftab720\sl276\slmult1
+
+\f0\b\fs24 \cf0 COP 3503 Project 3 \'96 Dinner Plans
+\b0 \
+7/2/14\
+\
+
+\b DUE: Tuesday 7/15/14
+\b0 \
+\
+\pard\pardeftab720\sl276\slmult1
+
+\f1\b \cf0 Description
+\f0\b0 \
+\pard\pardeftab720\sl276\slmult1
+
+\f1 \cf0 You will implement a program that reads, names, stores, and operates on recipes. Recipes consist of a title, an ingredient list, and a set of instructions. Instructions may also contain equipment information. Operations include combining a set of recipes to arrive at a combined ingredient list, combined equipment, and combined instructions. They also include taking inventory lists of available ingredients and equipment and subtracting them from combined lists to arrive at shopping lists of needed items. 
+\f0 \
+\
+\pard\pardeftab720\sl276\slmult1
+
+\b \cf0 User Input
+\b0 \
+\pard\pardeftab720\sl276\slmult1
+
+\f1 \cf0 The user input is similar to earlier projects, but there are some differences regarding the meanings of the commands. 
+\f0 \
+
+\f1 The numbered commands are as follows:
+\f0 \
+\pard\tx2160\pardeftab720\li720\fi-360\ri0\sl276\slmult1
+\ls1\ilvl0
+\f2 \cf0  0.	
+\f1 exit
+\f0 \
+\ls1\ilvl0
+\f2  1.	
+\f1 input recipe file <filename>: open and read a file containing recipes, storing each recipe as a separate item, named using the title provided in the recipe file
+\f0 \
+\ls1\ilvl0
+\f2  2.	
+\f1 input inventory file <filename>: open and read a file containing inventory information, combining it with existing inventory information, if any
+\f0 \
+\ls1\ilvl0
+\f2  3.	
+\f1 subtract inventory file <filename>: open and subtract inventory lists from a file from the current inventory lists
+\f0 \
+\ls1\ilvl0
+\f2  4.	
+\f1 add <recipe name>: add a recipe from those stored to a current menu list
+\f0 \
+\ls1\ilvl0
+\f2  5.	
+\f1 remove <recipe name>: remove a recipe from the current menu list
+\f0 \
+\ls1\ilvl0
+\f2  6.	
+\f1 reset current menu list to the empty set
+\f0 \
+\ls1\ilvl0
+\f2  7.	
+\f1 output menu <filename>: open and write the current menu to a file in RBML
+\f0 \
+\ls1\ilvl0
+\f2  8.	
+\f1 print current menu list to the console in formatted plain text
+\f0 \
+\ls1\ilvl0
+\f2  9.	
+\f1 print <recipe name>: find recipe if stored and print it to the console in formatted plain text
+\f0 \
+\ls1\ilvl0
+\f2  10.	
+\f1 increase <ingredient inventory item>: add/increase inventory item to the current inventory list
+\f0 \
+\ls1\ilvl0
+\f2  11.	
+\f1 reduce <ingredient inventory item>: decrease/remove item from the current inventory list
+\f0 \
+\ls1\ilvl0
+\f2  12.	
+\f1 insert <equipment inventory item>: add inventory item to the current inventory list
+\f0 \
+\ls1\ilvl0
+\f2  13.	
+\f1 delete <equipment inventory item>: remove inventory item from the current inventory list
+\f0 \
+\ls1\ilvl0
+\f2  14.	
+\f1 print ingredient inventory: print ingredient inventory to console in formatted plain text
+\f0 \
+\ls1\ilvl0
+\f2  15.	
+\f1 print equipment inventory: print equipment inventory to console in formatted plain text
+\f0 \
+\ls1\ilvl0
+\f2  16.	
+\f1 print ingredients list: combine ingredient lists of recipes in current menu and print the combined ingredient list to the console in formatted plain text
+\f0 \
+\ls1\ilvl0
+\f2  17.	
+\f1 print ingredient shopping list: combine ingredient lists of recipes in current menu, subtract the ingredient inventory list, and print the missing ingredient list to the console in formatted plain text
+\f0 \
+\ls1\ilvl0
+\f2  18.	
+\f1 output ingredient shopping list <file>:  combine ingredient lists of recipes in current menu, subtract the ingredient inventory list, and store the combined ingredient list to the named file in RBML ingredient list format
+\f0 \
+\ls1\ilvl0
+\f2  19.	
+\f1 print equipment list: combine equipment lists of recipes in current menu and print the combined equipment list to the console in formatted plain text
+\f0 \
+\ls1\ilvl0
+\f2  20.	
+\f1 print equipment shopping list: combine equipment lists of recipes in current menu, subtract the equipment inventory list, and print the needed equipment list to the console in formatted plain text
+\f0 \
+\ls1\ilvl0
+\f2  21.	
+\f1 output equipment shopping list <file>:  combine equipment lists of recipes in current menu, subtract the current equipment inventory list, and store the combined equipment list to the named file in RBML equipment list format
+\f0 \
+\ls1\ilvl0
+\f2  22.	
+\f1 help
+\f0 \
+\pard\pardeftab720\sl276\slmult1
+\cf0 \
+\pard\pardeftab720\sl276\slmult1
+
+\f1\b \cf0 File input and output format
+\f0\b0 \
+\pard\pardeftab720\sl276\slmult1
+
+\f1 \cf0 For storage of inventory lists and recipes, a form of XML will be used. We will use a simplified version of the Recipe Book ML available at {\field{\*\fldinst{HYPERLINK "http://www.happy-monkey.net/recipebook/"}}{\fldrslt \cf2 \ul \ulc0 http://www.happy-monkey.net/recipebook/}}
+\f0 , requiring only title, ingredient list, and preparation elements, with other elements optional. Multiple recipes may be stored per recipe file, and all recipes are to be read in and labeled by recipe title. The version we will use is commented with the required and optional parts; see {\field{\*\fldinst{HYPERLINK "http://www.cise.ufl.edu/~nemo/cop3503/recipebook.dtd"}}{\fldrslt 
+\f1 \cf2 \ul \ulc0 http://www.cise.ufl.edu/~nemo/cop3503/recipebook.dtd}}. You may view it using wordpad or other text editor. It also has a few minor extensions. \
+
+\f1 Inventory files use similar XML format, but only consist of lists of ingredients and/or equipment. 
+\f0 \
+
+\f1 A title is just a text string (perhaps with white space). Ingredients have a text description, an optional quantity, and an optional measurement unit. Equipment is simply a text description (or optionally, a URL). 
+\f0 \
+
+\f1 While several elements of (the already rather simple) Recipe Book ML are optional, your program must be able to skip over the parts that it does not process (e.g., optional recipeinfo, serving, notes, etc.) so that it can use existing recipe files. 
+\f0 \
+\
+\pard\pardeftab720\sl276\slmult1
+
+\f1\b \cf0 Functionality
+\f0\b0 \
+\pard\pardeftab720\sl276\slmult1
+
+\f1 \cf0 The process will maintain a current collection of \cb3 recipes\cb1 , a current \cb4 ingredient inventory\cb1 , a current \cb3 equipment inventory\cb1 , and a current \cb3 menu\cb1 , which is just a subset of the recipe collection. 
+\f0 \
+
+\f1 Silent and verbose modes behave as they did in earlier projects. 
+\f0 \
+
+\f1 Writes indicating errors (e.g., failure to open a file), will be written to standard error (cerr stream). 
+\f0 \
+\
+
+\f1 Program Command Line Arguments
+\f0 \
+
+\f1 The program will read in optional command line parameters for mode (-v for verbose, -s for silent), file input for the initial recipe set(s) (using -r <file_name> to indicate the file to read in), and initial inventory set(s) (using -i <file_name>). Note that multiple recipe and inventory files may be indicated.
+\f0 \
+
+\f1  
+\f0 \
+
+\f1 User Interface Commands 
+\f0 \
+\pard\tx2160\pardeftab720\li720\fi-360\ri0\sl276\slmult1
+
+\f1 \cf0 exit \'96 exit the program
+\f0 \
+
+\f1 input recipe file <filename>: open and read a file containing recipes in RBML, storing each recipe as a separate item, named using the title provided in the recipe file
+\f0 \
+
+\f1 input inventory file <filename>: open and read a file containing inventory information, combining it with existing inventory information, if any. Inventory items are to be combined if their description matches exactly, and combination is performed by adding the quantities of like units. If units are different, then quantities for each unit must be maintained (e.g., 3 cups flour and 2 teaspoons flour have the same description, but different units, so must both cups and teaspoon quantities must be maintained. You are not expected to convert units, so although 3 tsp = 1 tbsp, you can keep an inventory item with 6 tsp and 2 tbsp without converting these to 4 tbsp or \'bc cup). 
+\f0 \
+
+\f1 subtract inventory file <filename>: open and subtract inventory lists from a file from the current inventory lists. Here, complain if an inventory item with quantity for a unit is subtracted from an inventory item with a smaller quantity in that unit (this may or may not be a problem in reality, since subtracting 2 tbsp from 10 cups of flour still leaves a lot of flour). Include the offending item information in the complaint, but carry on. \cb5 Throw and catch an exception\cb1  if any input quantity is negative, but simply remove the item from the resultant list if a greater or equal quantity is subtracted from the original list.  
+\f0 \
+
+\f1 add <recipe name>: add a recipe from those stored to a current menu list. Self-explanatory. 
+\f0 \
+
+\f1 remove <recipe name>: remove a recipe from the current menu list. Self-explanatory.
+\f0 \
+
+\f1 reset current menu list to the empty set. Self-explanatory.
+\f0 \
+
+\f1 output menu <filename>: open and write the current menu to a file in RBML. This must include all recipes in the current menu, but each recipe only has to include the required elements; you may either process the optional elements and output them, or simply store them without further processing and output them uninterpreted, or discard them on input and not output them. In other words, you may read in a recipe from a file that has optional tagged fields and just discard those fields, so if you output that same recipe, the output version will omit those optional fields; or you may store those fields and output them with the rest of the recipe so that the output version is substantially the same as the original. 
+\f0 \
+
+\f1 print current menu list to the console in formatted plain text. Here, just print out the name of each recipe left-justified on a line by itself (do NOT print out the rest of the recipe information). 
+\f0 \
+
+\f1 print <recipe name>: find recipe if stored and print it to the console in formatted plain text. Here, print out the recipe title left justified on one line, then sections. Each section shall have a section title preceded by two spaces on its own line (e.g., Ingredients, Preparation), followed by its elements. Ingredients shall be listed with one per line along with quantity and unit (if any). Preparation shall be listed one step per line. Equipment shall be listed in a separate equipment list, one item per line. No XML tags shall be included, and you should add spacing to provide for readability. Elements of each section shall be proceeded by a tab, and ingredients shall have quantity (if any) followed by a single space, then units (if any) followed by a single space, then the textual description. If quantity or units are omitted, then also omit the corresponding space. Equipment and steps shall simply be output verbatim. No additional spaces shall be inserted. 
+\f0 \
+
+\f1 increase <ingredient inventory item>: add ingredient inventory item to the current inventory list. Ingredient inventory item is of the form <item description> [<quantity> [<units>]], meaning that the item must have an identifier (its key), and may have a quantity, which may have units. Quantity is a positive number, units is a text string. If the ingredient is already on the inventory list, simply increase its quantity as noted above (no unit conversions needed) if a quantity is provided. If it is not already on the inventory list, then add it to the inventory list. 
+\f0 \
+
+\f1 reduce <ingredient inventory item>: remove inventory item from the current inventory list. Ingredient inventory item is of the form <item description> [<quantity> [<units>]], meaning that the item must have an identifier (its key), and may have a quantity, which may have units. Quantity is a positive number, units is a text string. If the ingredient is already on the inventory list, simply decrease its quantity as noted above (no unit conversions needed) if a quantity is provided. If it is not already on the inventory list, or if the quantity in the like units is reduced to less than zero, complain to cerr about the situation and reduce the quantity to zero. If all quantities for the item are reduced to zero, then delete the item.  
+\f0 \
+
+\f1 insert <equipment inventory item>: add equipment item to the current inventory list. If the item is already on the list then no change is made, but complain to cerr. 
+\f0 \
+
+\f1 delete <equipment inventory item>: remove equipment item from the current inventory list. If the item is not on the list then no change is made, but complain to cerr. 
+\f0 \
+
+\f1 print ingredient inventory: print ingredient inventory to console in formatted plain text. Output a title \'93Ingredients\'94 left-justified on a line by itself, then on each following line list a single ingredient preceded by a tab. If the ingredient has a quantity, then print the quantity first, followed by a space. If the quantity has units, print the units followed by a space. Ingredient description shall then be printed verbatim.  If there are multiple units, then each unit shall be printed with the quantity and ingredient on its own line (e.g., if the inventory has \'93beer\'94 listed with 12 cans and 1 keg, then output \'9312 cans beer\'94 on one line and \'931 keg beer\'94 on another). 
+\f0 \
+
+\f1 print equipment inventory: print equipment inventory to console in formatted plain text. Output a title \'93Equipment\'94 left-justified on a line by itself, then on each following line list a single equipment item preceded by a tab. Equipment description shall be printed verbatim. 
+\f0 \
+
+\f1 print ingredients list: combine ingredient lists of recipes in current menu and print the combined ingredient list to the console in formatted plain text. Output is described above. 
+\f0 \
+
+\f1 print ingredient shopping list: combine ingredient lists of recipes in current menu, subtract the ingredient inventory list, and print the missing ingredient list to the console in formatted plain text. Output is described above. 
+\f0 \
+
+\f1 output ingredient shopping list <file>:  combine ingredient lists of recipes in current menu, subtract the ingredient inventory list, and store the combined ingredient list to the named file in RBML ingredient list format. Self-explanatory.
+\f0 \
+
+\f1 print equipment list: combine equipment lists of recipes in current menu and print the combined equipment list to the console in formatted plain text. Use the same format as given above. 
+\f0 \
+
+\f1 print equipment shopping list: combine equipment lists of recipes in current menu, subtract the equipment inventory list, and print the needed equipment list to the console in formatted plain text. Use the same format as given above. 
+\f0 \
+
+\f1 output equipment shopping list <file>:  combine equipment lists of recipes in current menu, subtract the current equipment inventory list, and store the combined equipment list to the named file in RBML equipment list format. Self-explanatory. 
+\f0 \
+
+\f1 Help \'96 Print a description of the supported commands to the console.
+\f0 \
+\pard\pardeftab720\sl276\slmult1
+
+\f1 \cf0  
+\f0 \
+\pard\pardeftab720\sl276\slmult1
+
+\f1\b \cf0 Errors
+\f0\b0 \
+\pard\pardeftab720\sl276\slmult1
+
+\f1 \cf0 Your program must detect and handle in a reasonable way typical errors. All warnings are printed to standard error (cerr). These include but are not limited to:
+\f0 \
+\pard\tx2160\pardeftab720\li720\fi-360\ri0\sl276\slmult1
+\ls2\ilvl0
+\f2 \cf0  1.	
+\f1 File <filename> cannot be opened \'96 print warning 
+\f0 \
+\ls2\ilvl0
+\f2  2.	
+\f1 File is not in correct format \'96 print warning. Items that are not in correct format must be discarded, with additional warning to the console in verbose mode
+\f0 \
+\ls2\ilvl0
+\f2  3.	
+\f1 Item <item name> is not in correct format on user input line \'96 issue warning to standard error and print help on correct format to the console
+\f0 \
+\ls2\ilvl0
+\f2  4.	
+\f1 Command is invalid \'96 issue warning to standard error and print verbose prompt to console
+\f0 \
+\pard\pardeftab720\sl276\slmult1
+\cf0 \
+\pard\pardeftab720\sl276\slmult1
+
+\f1\b \cf0 Submissions
+\f0\b0 \
+\pard\pardeftab720\sl276\slmult1
+
+\f1 \cf0 Submit your project as project report, user documentation, readme, makefile, and code files. Code files should include one or more header files, one or more files with main(), and one or more implementation files, and should include comments as needed. You may use external code for XML parsing, provided that you give credit and document where you got it. You may use any built-in features of C++ including standard library facilities.
+\f0 \
+\
+\pard\pardeftab720\sl276\slmult1
+
+\f1\b \cf0 Extra Credit
+\f0\b0 \
+\pard\pardeftab720\sl276\slmult1
+
+\f1 \cf0 You will receive extra credit for implementing additional features correctly. Note which of these you implement in your program documentation. 
+\f0 \
+\pard\tx2160\pardeftab720\li720\fi-360\ri0\sl276\slmult1
+
+\f1 \cf0 Full implementation of Recipe Book ML \'96 3 pts. This means storing in the program, saving to files in correct format, and printing in readable way to console the fields marked as optional.
+\f0 \
+
+\f1 Implementation of units conversion \'96 5 pts. This means conversion of the following units in order to handle correctly ingredients lists and inventories, especially when subtracting.
+\f0 \
+
+\f1 Extension of equipment \'96 2 pts. Equipment items can have optional quantities as well, both for inventory and for preparation (similar to ingredient items). Default quantity is 1, but addition of more equipment can lead to larger numbers (e.g., baking dishes, bowls, etc.).
+\f0 \
+\pard\pardeftab720\sl276\slmult1
+
+\f1 \cf0 \
+Unit Conventions and Conversions (extra credit)
+\f0 \
+
+\f1 The following units will taken as conventional for equivalence and for conversion. Capitalization and placement of a period following the unit shall be ignored. 
+\f0 \
+
+\f1 \
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw1\brdrcf0 \clbrdrl\brdrs\brdrw1\brdrcf0 \clbrdrb\brdrs\brdrw1\brdrcf0 \clbrdrr\brdrs\brdrw20\brdrcf6 \clpadl100 \clpadr100 \gaph\cellx1080
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw1\brdrcf0 \clbrdrl\brdrs\brdrw1\brdrcf0 \clbrdrb\brdrs\brdrw1\brdrcf0 \clbrdrr\brdrs\brdrw20\brdrcf6 \clpadl100 \clpadr100 \gaph\cellx2160
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw1\brdrcf0 \clbrdrl\brdrs\brdrw1\brdrcf0 \clbrdrb\brdrs\brdrw1\brdrcf0 \clbrdrr\brdrs\brdrw20\brdrcf6 \clpadl100 \clpadr100 \gaph\cellx3240
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw1\brdrcf0 \clbrdrl\brdrs\brdrw1\brdrcf0 \clbrdrb\brdrs\brdrw1\brdrcf0 \clbrdrr\brdrs\brdrw20\brdrcf6 \clpadl100 \clpadr100 \gaph\cellx4320
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw1\brdrcf0 \clbrdrl\brdrs\brdrw1\brdrcf0 \clbrdrb\brdrs\brdrw1\brdrcf0 \clbrdrr\brdrs\brdrw20\brdrcf6 \clpadl100 \clpadr100 \gaph\cellx5400
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw1\brdrcf0 \clbrdrl\brdrs\brdrw1\brdrcf0 \clbrdrb\brdrs\brdrw1\brdrcf0 \clbrdrr\brdrs\brdrw20\brdrcf6 \clpadl100 \clpadr100 \gaph\cellx6480
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw1\brdrcf0 \clbrdrl\brdrs\brdrw1\brdrcf0 \clbrdrb\brdrs\brdrw1\brdrcf0 \clbrdrr\brdrs\brdrw20\brdrcf6 \clpadl100 \clpadr100 \gaph\cellx7560
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw1\brdrcf0 \clbrdrl\brdrs\brdrw1\brdrcf0 \clbrdrb\brdrs\brdrw1\brdrcf0 \clbrdrr\brdrs\brdrw1\brdrcf0 \clpadl100 \clpadr100 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\qr
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\qc
+\cf0 Tsp
+\f0 \cell 
+\pard\intbl\itap1\pardeftab720\qc
+
+\f1 \cf0 Tbsp
+\f0 \cell 
+\pard\intbl\itap1\pardeftab720\qc
+
+\f1 \cf0 Oz
+\f0 \cell 
+\pard\intbl\itap1\pardeftab720\qc
+
+\f1 \cf0 Cup
+\f0 \cell 
+\pard\intbl\itap1\pardeftab720\qc
+
+\f1 \cf0 Pint
+\f0 \cell 
+\pard\intbl\itap1\pardeftab720\qc
+
+\f1 \cf0 Quart
+\f0 \cell 
+\pard\intbl\itap1\pardeftab720\qc
+
+\f1 \cf0 Gallon
+\f0 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf6 \clbrdrl\brdrs\brdrw1\brdrcf0 \clbrdrb\brdrs\brdrw1\brdrcf0 \clbrdrr\brdrs\brdrw20\brdrcf6 \clpadl100 \clpadr100 \gaph\cellx1080
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf6 \clbrdrl\brdrs\brdrw1\brdrcf0 \clbrdrb\brdrs\brdrw1\brdrcf0 \clbrdrr\brdrs\brdrw20\brdrcf6 \clpadl100 \clpadr100 \gaph\cellx2160
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf6 \clbrdrl\brdrs\brdrw1\brdrcf0 \clbrdrb\brdrs\brdrw1\brdrcf0 \clbrdrr\brdrs\brdrw20\brdrcf6 \clpadl100 \clpadr100 \gaph\cellx3240
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf6 \clbrdrl\brdrs\brdrw1\brdrcf0 \clbrdrb\brdrs\brdrw1\brdrcf0 \clbrdrr\brdrs\brdrw20\brdrcf6 \clpadl100 \clpadr100 \gaph\cellx4320
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf6 \clbrdrl\brdrs\brdrw1\brdrcf0 \clbrdrb\brdrs\brdrw1\brdrcf0 \clbrdrr\brdrs\brdrw20\brdrcf6 \clpadl100 \clpadr100 \gaph\cellx5400
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf6 \clbrdrl\brdrs\brdrw1\brdrcf0 \clbrdrb\brdrs\brdrw1\brdrcf0 \clbrdrr\brdrs\brdrw20\brdrcf6 \clpadl100 \clpadr100 \gaph\cellx6480
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf6 \clbrdrl\brdrs\brdrw1\brdrcf0 \clbrdrb\brdrs\brdrw1\brdrcf0 \clbrdrr\brdrs\brdrw20\brdrcf6 \clpadl100 \clpadr100 \gaph\cellx7560
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf6 \clbrdrl\brdrs\brdrw1\brdrcf0 \clbrdrb\brdrs\brdrw1\brdrcf0 \clbrdrr\brdrs\brdrw1\brdrcf0 \clpadl100 \clpadr100 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\qr
+
+\f1 \cf0 Tsp = teaspoon
+\f0 \cell 
+\pard\intbl\itap1\pardeftab720\qc
+
+\f1 \cf0 1
+\f0 \cell 
+\pard\intbl\itap1\pardeftab720\qc
+
+\f1 \cf0 3
+\f0 \cell 
+\pard\intbl\itap1\pardeftab720\qc
+
+\f1 \cf0 6
+\f0 \cell 
+\pard\intbl\itap1\pardeftab720\qc
+
+\f1 \cf0 48
+\f0 \cell 
+\pard\intbl\itap1\pardeftab720\qc
+
+\f1 \cf0 96
+\f0 \cell 
+\pard\intbl\itap1\pardeftab720\qc
+
+\f1 \cf0 192
+\f0 \cell 
+\pard\intbl\itap1\pardeftab720\qc
+
+\f1 \cf0 768
+\f0 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf6 \clbrdrl\brdrs\brdrw1\brdrcf0 \clbrdrb\brdrs\brdrw1\brdrcf0 \clbrdrr\brdrs\brdrw20\brdrcf6 \clpadl100 \clpadr100 \gaph\cellx1080
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf6 \clbrdrl\brdrs\brdrw1\brdrcf0 \clbrdrb\brdrs\brdrw1\brdrcf0 \clbrdrr\brdrs\brdrw20\brdrcf6 \clpadl100 \clpadr100 \gaph\cellx2160
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf6 \clbrdrl\brdrs\brdrw1\brdrcf0 \clbrdrb\brdrs\brdrw1\brdrcf0 \clbrdrr\brdrs\brdrw20\brdrcf6 \clpadl100 \clpadr100 \gaph\cellx3240
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf6 \clbrdrl\brdrs\brdrw1\brdrcf0 \clbrdrb\brdrs\brdrw1\brdrcf0 \clbrdrr\brdrs\brdrw20\brdrcf6 \clpadl100 \clpadr100 \gaph\cellx4320
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf6 \clbrdrl\brdrs\brdrw1\brdrcf0 \clbrdrb\brdrs\brdrw1\brdrcf0 \clbrdrr\brdrs\brdrw20\brdrcf6 \clpadl100 \clpadr100 \gaph\cellx5400
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf6 \clbrdrl\brdrs\brdrw1\brdrcf0 \clbrdrb\brdrs\brdrw1\brdrcf0 \clbrdrr\brdrs\brdrw20\brdrcf6 \clpadl100 \clpadr100 \gaph\cellx6480
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf6 \clbrdrl\brdrs\brdrw1\brdrcf0 \clbrdrb\brdrs\brdrw1\brdrcf0 \clbrdrr\brdrs\brdrw20\brdrcf6 \clpadl100 \clpadr100 \gaph\cellx7560
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf6 \clbrdrl\brdrs\brdrw1\brdrcf0 \clbrdrb\brdrs\brdrw1\brdrcf0 \clbrdrr\brdrs\brdrw1\brdrcf0 \clpadl100 \clpadr100 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\qr
+
+\f1 \cf0 Tbsp = tablespoon
+\f0 \cell 
+\pard\intbl\itap1\pardeftab720\qc
+
+\f1 \cf0 \cell 
+\pard\intbl\itap1\pardeftab720\qc
+\cf0 1
+\f0 \cell 
+\pard\intbl\itap1\pardeftab720\qc
+
+\f1 \cf0 2
+\f0 \cell 
+\pard\intbl\itap1\pardeftab720\qc
+
+\f1 \cf0 16
+\f0 \cell 
+\pard\intbl\itap1\pardeftab720\qc
+
+\f1 \cf0 32
+\f0 \cell 
+\pard\intbl\itap1\pardeftab720\qc
+
+\f1 \cf0 64
+\f0 \cell 
+\pard\intbl\itap1\pardeftab720\qc
+
+\f1 \cf0 256
+\f0 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf6 \clbrdrl\brdrs\brdrw1\brdrcf0 \clbrdrb\brdrs\brdrw1\brdrcf0 \clbrdrr\brdrs\brdrw20\brdrcf6 \clpadl100 \clpadr100 \gaph\cellx1080
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf6 \clbrdrl\brdrs\brdrw1\brdrcf0 \clbrdrb\brdrs\brdrw1\brdrcf0 \clbrdrr\brdrs\brdrw20\brdrcf6 \clpadl100 \clpadr100 \gaph\cellx2160
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf6 \clbrdrl\brdrs\brdrw1\brdrcf0 \clbrdrb\brdrs\brdrw1\brdrcf0 \clbrdrr\brdrs\brdrw20\brdrcf6 \clpadl100 \clpadr100 \gaph\cellx3240
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf6 \clbrdrl\brdrs\brdrw1\brdrcf0 \clbrdrb\brdrs\brdrw1\brdrcf0 \clbrdrr\brdrs\brdrw20\brdrcf6 \clpadl100 \clpadr100 \gaph\cellx4320
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf6 \clbrdrl\brdrs\brdrw1\brdrcf0 \clbrdrb\brdrs\brdrw1\brdrcf0 \clbrdrr\brdrs\brdrw20\brdrcf6 \clpadl100 \clpadr100 \gaph\cellx5400
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf6 \clbrdrl\brdrs\brdrw1\brdrcf0 \clbrdrb\brdrs\brdrw1\brdrcf0 \clbrdrr\brdrs\brdrw20\brdrcf6 \clpadl100 \clpadr100 \gaph\cellx6480
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf6 \clbrdrl\brdrs\brdrw1\brdrcf0 \clbrdrb\brdrs\brdrw1\brdrcf0 \clbrdrr\brdrs\brdrw20\brdrcf6 \clpadl100 \clpadr100 \gaph\cellx7560
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf6 \clbrdrl\brdrs\brdrw1\brdrcf0 \clbrdrb\brdrs\brdrw1\brdrcf0 \clbrdrr\brdrs\brdrw1\brdrcf0 \clpadl100 \clpadr100 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\qr
+
+\f1 \cf0 Oz = ounce
+\f0 \cell 
+\pard\intbl\itap1\pardeftab720\qc
+
+\f1 \cf0 \cell 
+\pard\intbl\itap1\pardeftab720\qc
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\qc
+\cf0 1
+\f0 \cell 
+\pard\intbl\itap1\pardeftab720\qc
+
+\f1 \cf0 8
+\f0 \cell 
+\pard\intbl\itap1\pardeftab720\qc
+
+\f1 \cf0 16
+\f0 \cell 
+\pard\intbl\itap1\pardeftab720\qc
+
+\f1 \cf0 32
+\f0 \cell 
+\pard\intbl\itap1\pardeftab720\qc
+
+\f1 \cf0 128
+\f0 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf6 \clbrdrl\brdrs\brdrw1\brdrcf0 \clbrdrb\brdrs\brdrw1\brdrcf0 \clbrdrr\brdrs\brdrw20\brdrcf6 \clpadl100 \clpadr100 \gaph\cellx1080
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf6 \clbrdrl\brdrs\brdrw1\brdrcf0 \clbrdrb\brdrs\brdrw1\brdrcf0 \clbrdrr\brdrs\brdrw20\brdrcf6 \clpadl100 \clpadr100 \gaph\cellx2160
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf6 \clbrdrl\brdrs\brdrw1\brdrcf0 \clbrdrb\brdrs\brdrw1\brdrcf0 \clbrdrr\brdrs\brdrw20\brdrcf6 \clpadl100 \clpadr100 \gaph\cellx3240
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf6 \clbrdrl\brdrs\brdrw1\brdrcf0 \clbrdrb\brdrs\brdrw1\brdrcf0 \clbrdrr\brdrs\brdrw20\brdrcf6 \clpadl100 \clpadr100 \gaph\cellx4320
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf6 \clbrdrl\brdrs\brdrw1\brdrcf0 \clbrdrb\brdrs\brdrw1\brdrcf0 \clbrdrr\brdrs\brdrw20\brdrcf6 \clpadl100 \clpadr100 \gaph\cellx5400
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf6 \clbrdrl\brdrs\brdrw1\brdrcf0 \clbrdrb\brdrs\brdrw1\brdrcf0 \clbrdrr\brdrs\brdrw20\brdrcf6 \clpadl100 \clpadr100 \gaph\cellx6480
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf6 \clbrdrl\brdrs\brdrw1\brdrcf0 \clbrdrb\brdrs\brdrw1\brdrcf0 \clbrdrr\brdrs\brdrw20\brdrcf6 \clpadl100 \clpadr100 \gaph\cellx7560
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf6 \clbrdrl\brdrs\brdrw1\brdrcf0 \clbrdrb\brdrs\brdrw1\brdrcf0 \clbrdrr\brdrs\brdrw1\brdrcf0 \clpadl100 \clpadr100 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\qr
+
+\f1 \cf0 C = cu = cup
+\f0 \cell 
+\pard\intbl\itap1\pardeftab720\qc
+
+\f1 \cf0 \cell 
+\pard\intbl\itap1\pardeftab720\qc
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\qc
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\qc
+\cf0 1
+\f0 \cell 
+\pard\intbl\itap1\pardeftab720\qc
+
+\f1 \cf0 2
+\f0 \cell 
+\pard\intbl\itap1\pardeftab720\qc
+
+\f1 \cf0 4
+\f0 \cell 
+\pard\intbl\itap1\pardeftab720\qc
+
+\f1 \cf0 16
+\f0 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf6 \clbrdrl\brdrs\brdrw1\brdrcf0 \clbrdrb\brdrs\brdrw1\brdrcf0 \clbrdrr\brdrs\brdrw20\brdrcf6 \clpadl100 \clpadr100 \gaph\cellx1080
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf6 \clbrdrl\brdrs\brdrw1\brdrcf0 \clbrdrb\brdrs\brdrw1\brdrcf0 \clbrdrr\brdrs\brdrw20\brdrcf6 \clpadl100 \clpadr100 \gaph\cellx2160
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf6 \clbrdrl\brdrs\brdrw1\brdrcf0 \clbrdrb\brdrs\brdrw1\brdrcf0 \clbrdrr\brdrs\brdrw20\brdrcf6 \clpadl100 \clpadr100 \gaph\cellx3240
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf6 \clbrdrl\brdrs\brdrw1\brdrcf0 \clbrdrb\brdrs\brdrw1\brdrcf0 \clbrdrr\brdrs\brdrw20\brdrcf6 \clpadl100 \clpadr100 \gaph\cellx4320
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf6 \clbrdrl\brdrs\brdrw1\brdrcf0 \clbrdrb\brdrs\brdrw1\brdrcf0 \clbrdrr\brdrs\brdrw20\brdrcf6 \clpadl100 \clpadr100 \gaph\cellx5400
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf6 \clbrdrl\brdrs\brdrw1\brdrcf0 \clbrdrb\brdrs\brdrw1\brdrcf0 \clbrdrr\brdrs\brdrw20\brdrcf6 \clpadl100 \clpadr100 \gaph\cellx6480
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf6 \clbrdrl\brdrs\brdrw1\brdrcf0 \clbrdrb\brdrs\brdrw1\brdrcf0 \clbrdrr\brdrs\brdrw20\brdrcf6 \clpadl100 \clpadr100 \gaph\cellx7560
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf6 \clbrdrl\brdrs\brdrw1\brdrcf0 \clbrdrb\brdrs\brdrw1\brdrcf0 \clbrdrr\brdrs\brdrw1\brdrcf0 \clpadl100 \clpadr100 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\qr
+
+\f1 \cf0 Pt = pint
+\f0 \cell 
+\pard\intbl\itap1\pardeftab720\qc
+
+\f1 \cf0 \cell 
+\pard\intbl\itap1\pardeftab720\qc
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\qc
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\qc
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\qc
+\cf0 1
+\f0 \cell 
+\pard\intbl\itap1\pardeftab720\qc
+
+\f1 \cf0 2
+\f0 \cell 
+\pard\intbl\itap1\pardeftab720\qc
+
+\f1 \cf0 8
+\f0 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf6 \clbrdrl\brdrs\brdrw1\brdrcf0 \clbrdrb\brdrs\brdrw1\brdrcf0 \clbrdrr\brdrs\brdrw20\brdrcf6 \clpadl100 \clpadr100 \gaph\cellx1080
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf6 \clbrdrl\brdrs\brdrw1\brdrcf0 \clbrdrb\brdrs\brdrw1\brdrcf0 \clbrdrr\brdrs\brdrw20\brdrcf6 \clpadl100 \clpadr100 \gaph\cellx2160
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf6 \clbrdrl\brdrs\brdrw1\brdrcf0 \clbrdrb\brdrs\brdrw1\brdrcf0 \clbrdrr\brdrs\brdrw20\brdrcf6 \clpadl100 \clpadr100 \gaph\cellx3240
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf6 \clbrdrl\brdrs\brdrw1\brdrcf0 \clbrdrb\brdrs\brdrw1\brdrcf0 \clbrdrr\brdrs\brdrw20\brdrcf6 \clpadl100 \clpadr100 \gaph\cellx4320
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf6 \clbrdrl\brdrs\brdrw1\brdrcf0 \clbrdrb\brdrs\brdrw1\brdrcf0 \clbrdrr\brdrs\brdrw20\brdrcf6 \clpadl100 \clpadr100 \gaph\cellx5400
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf6 \clbrdrl\brdrs\brdrw1\brdrcf0 \clbrdrb\brdrs\brdrw1\brdrcf0 \clbrdrr\brdrs\brdrw20\brdrcf6 \clpadl100 \clpadr100 \gaph\cellx6480
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf6 \clbrdrl\brdrs\brdrw1\brdrcf0 \clbrdrb\brdrs\brdrw1\brdrcf0 \clbrdrr\brdrs\brdrw20\brdrcf6 \clpadl100 \clpadr100 \gaph\cellx7560
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf6 \clbrdrl\brdrs\brdrw1\brdrcf0 \clbrdrb\brdrs\brdrw1\brdrcf0 \clbrdrr\brdrs\brdrw1\brdrcf0 \clpadl100 \clpadr100 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\qr
+
+\f1 \cf0 Qt = quart
+\f0 \cell 
+\pard\intbl\itap1\pardeftab720\qc
+
+\f1 \cf0 \cell 
+\pard\intbl\itap1\pardeftab720\qc
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\qc
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\qc
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\qc
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\qc
+\cf0 1
+\f0 \cell 
+\pard\intbl\itap1\pardeftab720\qc
+
+\f1 \cf0 4
+\f0 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf6 \clbrdrl\brdrs\brdrw1\brdrcf0 \clbrdrb\brdrs\brdrw1\brdrcf0 \clbrdrr\brdrs\brdrw20\brdrcf6 \clpadl100 \clpadr100 \gaph\cellx1080
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf6 \clbrdrl\brdrs\brdrw1\brdrcf0 \clbrdrb\brdrs\brdrw1\brdrcf0 \clbrdrr\brdrs\brdrw20\brdrcf6 \clpadl100 \clpadr100 \gaph\cellx2160
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf6 \clbrdrl\brdrs\brdrw1\brdrcf0 \clbrdrb\brdrs\brdrw1\brdrcf0 \clbrdrr\brdrs\brdrw20\brdrcf6 \clpadl100 \clpadr100 \gaph\cellx3240
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf6 \clbrdrl\brdrs\brdrw1\brdrcf0 \clbrdrb\brdrs\brdrw1\brdrcf0 \clbrdrr\brdrs\brdrw20\brdrcf6 \clpadl100 \clpadr100 \gaph\cellx4320
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf6 \clbrdrl\brdrs\brdrw1\brdrcf0 \clbrdrb\brdrs\brdrw1\brdrcf0 \clbrdrr\brdrs\brdrw20\brdrcf6 \clpadl100 \clpadr100 \gaph\cellx5400
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf6 \clbrdrl\brdrs\brdrw1\brdrcf0 \clbrdrb\brdrs\brdrw1\brdrcf0 \clbrdrr\brdrs\brdrw20\brdrcf6 \clpadl100 \clpadr100 \gaph\cellx6480
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf6 \clbrdrl\brdrs\brdrw1\brdrcf0 \clbrdrb\brdrs\brdrw1\brdrcf0 \clbrdrr\brdrs\brdrw20\brdrcf6 \clpadl100 \clpadr100 \gaph\cellx7560
+\clvertalc \clshdrawnil \clbrdrt\brdrs\brdrw20\brdrcf6 \clbrdrl\brdrs\brdrw1\brdrcf0 \clbrdrb\brdrs\brdrw1\brdrcf0 \clbrdrr\brdrs\brdrw1\brdrcf0 \clpadl100 \clpadr100 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\qr
+
+\f1 \cf0 G = gal = gallon
+\f0 \cell 
+\pard\intbl\itap1\pardeftab720\qc
+
+\f1 \cf0 \cell 
+\pard\intbl\itap1\pardeftab720\qc
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\qc
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\qc
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\qc
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\qc
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\qc
+\cf0 1
+\f0 \cell \lastrow\row
+\pard\pardeftab720\sl276\slmult1
+
+\f1 \cf0 \
+}

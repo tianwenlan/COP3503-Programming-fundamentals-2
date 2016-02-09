@@ -1,0 +1,56 @@
+Shape type          : good
+Shape area          : 0 = 0
+Shape perim         : 0 = 0
+Rectangle type      : good
+Rectangle area      : 12 = 12
+Rectangle perim     : 14 = 14
+Triangle type       : good
+Triangle area       : 6 = 6
+Triangle perim      : 12 = 12
+Square type         : good
+Square area         : 25 = 25
+Square perim        : 20 = 20
+
+SHAPE POINTER STUFF!!!
+
+Shape type          : good
+Shape area          : 0 = 0
+Shape perim         : 0 = 0
+Rectangle type      : good
+Rectangle area      : 12 = 12
+Rectangle perim     : 14 = 14
+Triangle type       : good
+Triangle area       : 6 = 6
+Triangle perim      : 12 = 12
+Square type         : good
+Square area         : 25 = 25
+Square perim        : 20 = 20
+
+PRINT SHAPE STUFF!!!
+
+Square: 
++----------+
+|          |
+|          |
+|          |
+|          |
+|          |
++----------+
+
+Rectangle: 
++--------+
+|        |
+|        |
+|        |
++--------+
+
+Triangle: 
++
+|\
+| \
+|  \
+|   \
++---+
+
+Shape: 
+???

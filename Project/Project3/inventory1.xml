@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE recipe PUBLIC "-//Happy-Monkey//DTD RecipeBook//EN"
+"http://www.happy-monkey.net/recipebook/recipebook.dtd">
+<inventory>
+	<ingredientlist>
+		<ingredient>
+			<quantity>4</quantity> 
+			<units>oz.</units> 
+			<fooditem>dry blackeyed peas</fooditem>
+		</ingredient>
+
+		<ingredient>
+			<quantity>1</quantity> 
+			<units>tsp.</units> 
+			<fooditem>baking
+				powder</fooditem>
+		</ingredient>
+
+		<ingredient>
+			<quantity>1</quantity>
+			<units>tsp.</units> 
+			<fooditem>unrefined sugar</fooditem>
+		</ingredient>
+
+		<ingredient>
+			<quantity>7</quantity>
+			<units>ribs</units>
+			<fooditem>celery</fooditem>
+		  , chopped
+		</ingredient>
+
+    <ingredient>
+      <quantity>8</quantity> 
+      <units>stalks</units> 
+      <fooditem>celery</fooditem>
+    </ingredient>
+
+    <ingredient>
+      <quantity>3</quantity> 
+      <units>tbsp.</units> 
+      <fooditem>peanut butter</fooditem>
+    </ingredient>
+
+    <ingredient>
+      <quantity>1/2</quantity> 
+      <units>cup</units> 
+      <fooditem>raisins</fooditem>
+    </ingredient>
+
+	<ingredient>
+		<quantity>2</quantity> 
+		<units>box</units> 
+		<fooditem>eggs</fooditem>
+	</ingredient>
+
+	<ingredient>
+		<quantity>2</quantity> 
+		<units>tsp.</units> 
+		<fooditem>garlic</fooditem>
+	</ingredient>
+
+</ingredientlist>
+
+	<equipmentlist>
+
+	  <equipment>3-quart saucepan</equipment>
+	  <equipment>knif</equipment>
+	  <equipment>pot</equipment>
+	  <equipment>pan</equipment>
+
+	</equipmentlist>
+
+
+</inventory>
