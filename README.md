@@ -2,10 +2,23 @@
 
 Lab
 ---------------
-
+1. Wrap up
+2. Graph implementation
+3. File I/O
+4. Graph implementation using struct
+5. Implementation using class
+6. Debug
+7. Binary Search Tree implementation
+8. Binary Search Tree implementation with more functions
+9. Xml parser - TinyXml
+10. Dynamic Array implementation
+11. Inheritance: shape -> recetangle
 
 Homework
 ----------------
+1. Self introduction
+2. File I/O, MergeSort impementation
+3. Solved the tower of Hanoi problem, and tested the running time for different number of disks
 
 Project
 -----------------
